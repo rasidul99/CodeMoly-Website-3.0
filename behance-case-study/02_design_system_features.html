@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeMoly 3.0 — Behance Case Study | Section 2: Design System & Features</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .hero-bg {
+      background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.25) 0%, transparent 60%),
+                  linear-gradient(180deg, #040717 0%, #09102a 50%, #02040d 100%);
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen text-slate-100 antialiased py-10 flex justify-center">
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       BEHANCE 1400PX CANVAS (SOLID WHITE OUTSIDE)
+  ════════════════════════════════════════════════════════════════════════ -->
+  <div class="w-[1400px] max-w-[1400px] hero-bg min-h-screen p-12 lg:p-16 flex flex-col gap-16 shadow-[0_20px_70px_rgba(0,0,0,0.2)] rounded-3xl border border-slate-200 overflow-hidden shrink-0">
+
+    <!-- Header -->
+    <div class="flex flex-col gap-4 text-left">
+      <span class="text-lg font-extrabold uppercase tracking-widest text-blue-400">BEHANCE CASE STUDY — SECTION 2</span>
+      <h1 class="text-5xl font-extrabold text-white">Visual Design System & Interactive Ergonomics</h1>
+      <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">Architecting high-fidelity UI components, skeuomorphic depth, and mobile fluid interactions for CodeMoly 3.0.</p>
+    </div>
+
+    <!-- Design System Grid -->
+    <div class="grid grid-cols-3 gap-8">
+      
+      <div class="glass-card p-8 rounded-3xl flex flex-col gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-blue-600/30 border border-blue-400/40 flex items-center justify-center text-blue-300 text-xl font-bold">01</div>
+        <h3 class="text-2xl font-extrabold text-white">Skeuomorphic Gradient Depth</h3>
+        <p class="text-lg text-slate-300 leading-relaxed">Crafting radial glow highlights overlaying deep royal blue gradients (`#09164f` → `#2546c7`) with custom corner mask borders.</p>
+        <div class="w-full h-32 rounded-2xl p-4 flex items-end justify-between border border-white/20" style="background: radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.28) 0%, transparent 55%), linear-gradient(135deg, #09164f 0%, #2546c7 100%)">
+          <span class="text-lg font-bold text-white">Card Canvas</span>
+          <span class="text-sm text-blue-200 font-mono">Glow Mask</span>
+        </div>
+      </div>
+
+      <div class="glass-card p-8 rounded-3xl flex flex-col gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-purple-600/30 border border-purple-400/40 flex items-center justify-center text-purple-300 text-xl font-bold">02</div>
+        <h3 class="text-2xl font-extrabold text-white">3D Vector Particle Ray Stage</h3>
+        <p class="text-lg text-slate-300 leading-relaxed">Concentric orbiting rings with real-time SVG animated particle rays connecting floating brand pill badges.</p>
+        <div class="w-full h-32 rounded-2xl bg-[#09164f]/70 border border-white/15 p-4 flex items-center justify-center relative overflow-hidden">
+          <div class="w-20 h-20 rounded-full border border-blue-400/30 animate-spin flex items-center justify-center">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20"></div>
+          </div>
+          <span class="absolute text-sm font-bold text-white">3D AI Chip Core</span>
+        </div>
+      </div>
+
+      <div class="glass-card p-8 rounded-3xl flex flex-col gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-600/30 border border-emerald-400/40 flex items-center justify-center text-emerald-300 text-xl font-bold">03</div>
+        <h3 class="text-2xl font-extrabold text-white">Mobile Ergonomics & 4-Tab Bar</h3>
+        <p class="text-lg text-slate-300 leading-relaxed">Instant tab switching on mobile viewports eliminating endless vertical scrolling for 1-tap category exploration.</p>
+        <div class="w-full h-32 rounded-2xl bg-slate-900 border border-slate-700 p-4 flex items-center gap-3 overflow-x-auto">
+          <span class="px-4 py-2 rounded-xl bg-[#09164f] text-white text-sm font-bold shrink-0 border border-blue-400/40">AI Training</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-sm font-bold shrink-0">Role AI</span>
+          <span class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-sm font-bold shrink-0">Digital</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

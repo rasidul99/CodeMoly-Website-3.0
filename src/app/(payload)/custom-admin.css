@@ -1,0 +1,1043 @@
+/* Custom Global Styles for Payload CMS Admin Panel (Vault Redesign Theme) */
+:root {
+  --sidebar-width: 340px !important;
+}
+
+/* General Page Layout background */
+html, body, #__next, .payload, main.payload, .template-default, .template-default__wrap, .app-body {
+  background-color: #f4f6fa !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Apply Sora heading font pairing */
+h1, h2, h3, h4, h5, h6, 
+.vault-header-left h1, 
+.vault-card-title, 
+.stat-number, 
+.page-title, 
+.create-card-title, 
+.info-card-title, 
+.login-heading, 
+.login-left-title {
+  font-family: 'Sora', sans-serif !important;
+}
+
+/* Hide default page layout shadows or borders that conflict */
+.template-default {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 1. Sidebar (Navigation) Overrides */
+.nav, aside.nav, aside.sidebar, .sidebar {
+  background-color: #ffffff !important;
+  border: 20px solid #133bc9 !important;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.01) !important;
+  width: 340px !important;
+  box-sizing: border-box !important;
+  border-radius: 44px !important;
+  overflow: hidden !important;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Sidebar scrollbar container */
+.nav__scroll {
+  padding: 16px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  transition: padding 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hide the old pseudo-element logo */
+.nav__scroll::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Custom Sidebar Header Container */
+.custom-sidebar-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  height: 56px !important;
+  background-color: rgba(18, 31, 82, 1) !important; /* Home page navbar color */
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(18, 31, 82, 0.15) !important;
+  padding: 0 16px !important;
+  margin-top: 0px !important;
+  margin-bottom: 24px !important;
+  box-sizing: border-box !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  flex-shrink: 0 !important;
+}
+
+/* Logo container and logo image */
+.custom-logo-container {
+  display: flex !important;
+  align-items: center !important;
+  flex: 1 !important;
+  cursor: default !important;
+  height: 100% !important;
+  user-select: none !important;
+}
+
+.custom-sidebar-logo {
+  width: 160px !important;
+  height: 20px !important;
+  background-image: url('/CodeMoly White Logo.svg') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Collapse Button styling */
+.custom-collapse-btn {
+  background: transparent !important;
+  border: none !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 4px !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.custom-collapse-btn:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.custom-collapse-btn svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Remove collapse/toggle buttons completely as requested */
+.template-default__nav-toggler-wrapper,
+.template-default__nav-toggler-container,
+.template-default__nav-toggler,
+.nav-toggler,
+.nav__header,
+.nav__header-content,
+.nav__mobile-close,
+.nav__hamburger,
+[class*="nav-toggler"],
+[class*="nav__toggler"],
+[class*="hamburger"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Group Labels (Collections, Globals) */
+.nav__group-label {
+  font-size: 10.5px !important;
+  font-weight: 750 !important;
+  color: #94a3b8 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 12px !important;
+  margin-top: 16px !important;
+  padding: 0 12px !important;
+}
+
+/* Link items - Scoped to nav__scroll to prevent matching breadcrumbs */
+.nav__scroll .nav__link, .nav__scroll a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 14px !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin-bottom: 4px !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.nav__scroll .nav__link:hover, .nav__scroll a:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Active links selection (Skeuomorphic blue gradient like the sign-in button) */
+.nav__scroll .nav__link:has(.nav__link-indicator),
+.nav__scroll div.nav__link,
+.nav__scroll .nav__link.active,
+.nav__scroll .nav__link--active,
+.nav__scroll .nav__link[aria-current="page"],
+.nav__scroll .nav__link[class*="active"],
+.nav__scroll .nav a[class*="active"],
+.nav__scroll .nav__link[class*="--active"] {
+  background-image: linear-gradient(135deg, rgb(29, 78, 216) 0%, rgb(59, 130, 246) 100%) !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2) !important;
+}
+
+.nav__scroll .nav__link:has(.nav__link-indicator) *,
+.nav__scroll div.nav__link * {
+  color: #ffffff !important;
+}
+
+.nav__scroll .nav__link:has(.nav__link-indicator):hover,
+.nav__scroll div.nav__link:hover,
+.nav__scroll .nav__link.active:hover, 
+.nav__scroll .nav__link--active:hover,
+.nav__scroll .nav__link[class*="active"]:hover {
+  background-image: linear-gradient(135deg, rgb(29, 78, 216) 0%, rgb(59, 130, 246) 100%) !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+.nav__scroll .nav__link:has(.nav__link-indicator):hover *,
+.nav__scroll div.nav__link:hover * {
+  color: #ffffff !important;
+}
+
+/* Hide default link indicator dot if active has background gradient */
+.nav__link-indicator {
+  display: none !important;
+}
+
+/* 2. Top bar / Breadcrumbs Area Overrides */
+.app-header, header.app-header, .app-header__sidebar {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  padding: 24px 32px 0 32px !important;
+}
+
+/* Hide breadcrumbs when our custom header handles it on the dashboard view */
+.vault-dashboard-wrapper ~ .app-header,
+.vault-dashboard-wrapper ~ header.app-header {
+  display: none !important;
+}
+
+/* Style main template content layout padding, offset by the sidebar width */
+.template-default__wrap {
+  padding: 0 !important;
+  margin-left: 0 !important;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Make sure the main content is fully centered and padded nicely */
+.template-default__content {
+  padding: 0 !important;
+  max-width: none !important;
+}
+
+/* Disable sidebar collapse behavior and hide arrows */
+.nav-group__indicator,
+button.nav-group__toggle svg,
+[class*="nav-group__indicator"],
+[class*="nav-group__toggle"] svg,
+.nav [class*="chevron"],
+.nav [class*="arrow"],
+aside [class*="chevron"],
+aside [class*="arrow"] {
+  display: none !important;
+}
+
+button.nav-group__toggle,
+[class*="nav-group__toggle"],
+.nav__group-label,
+[class*="nav__group-label"] {
+  display: none !important;
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+/* Add some spacing between groups when labels are hidden */
+.nav-group + .nav-group,
+[class*="nav-group"] + [class*="nav-group"] {
+  margin-top: 16px !important;
+}
+
+button.nav-group__toggle:hover,
+[class*="nav-group__toggle"]:hover {
+  background: transparent !important;
+}
+
+.nav-group__content,
+[class*="nav-group__content"] {
+  display: block !important;
+  height: auto !important;
+  overflow: visible !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Sidebar Nav Item Icons - Scoped to nav__scroll to prevent matching breadcrumbs */
+.nav__scroll .nav__link::before,
+.nav__scroll .nav a::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 16px !important;
+  height: 16px !important;
+  background-color: currentColor !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E") !important;
+  flex-shrink: 0 !important;
+}
+
+/* Specific SVG masks for each menu route */
+.nav__scroll .nav__link[href$="/admin"]::before,
+.nav__scroll .nav a[href$="/admin"]::before,
+.nav__scroll .nav__link[href$="/admin/"]::before,
+.nav__scroll .nav a[href$="/admin/"]::before,
+.nav__scroll .nav__link[href$="/dashboard"]::before,
+.nav__scroll .nav a[href$="/dashboard"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='9'/%3E%3Crect x='14' y='3' width='7' height='5'/%3E%3Crect x='14' y='12' width='7' height='9'/%3E%3Crect x='3' y='16' width='7' height='5'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='9'/%3E%3Crect x='14' y='3' width='7' height='5'/%3E%3Crect x='14' y='12' width='7' height='9'/%3E%3Crect x='3' y='16' width='7' height='5'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/users"]::before,
+.nav__scroll .nav a[href*="/collections/users"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/media"]::before,
+.nav__scroll .nav a[href*="/collections/media"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'/%3E%3Cpolyline points='21 15 16 10 5 21'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2' ry='2'/%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'/%3E%3Cpolyline points='21 15 16 10 5 21'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/pages"]::before,
+.nav__scroll .nav a[href*="/collections/pages"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='16' y1='13' x2='8' y2='13'/%3E%3Cline x1='16' y1='17' x2='8' y2='17'/%3E%3Cpolyline points='10 9 9 9 8 9'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='16' y1='13' x2='8' y2='13'/%3E%3Cline x1='16' y1='17' x2='8' y2='17'/%3E%3Cpolyline points='10 9 9 9 8 9'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/services"]::before,
+.nav__scroll .nav a[href*="/collections/services"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='7' width='20' height='14' rx='2' ry='2'/%3E%3Cpath d='M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='7' width='20' height='14' rx='2' ry='2'/%3E%3Cpath d='M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/products"]::before,
+.nav__scroll .nav a[href*="/collections/products"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z'/%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cpath d='M16 10a4 4 0 0 1-8 0'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z'/%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cpath d='M16 10a4 4 0 0 1-8 0'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/case-studies"]::before,
+.nav__scroll .nav a[href*="/collections/case-studies"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/%3E%3Cpath d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/%3E%3Cpath d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/blog-posts"]::before,
+.nav__scroll .nav a[href*="/collections/blog-posts"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20h9'/%3E%3Cpath d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20h9'/%3E%3Cpath d='M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/testimonials"]::before,
+.nav__scroll .nav a[href*="/collections/testimonials"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/partner-logos"]::before,
+.nav__scroll .nav a[href*="/collections/partner-logos"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='7'/%3E%3Cpolyline points='8.21 13.89 7 23 12 20 17 23 15.79 13.88'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='7'/%3E%3Cpolyline points='8.21 13.89 7 23 12 20 17 23 15.79 13.88'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/team-members"]::before,
+.nav__scroll .nav a[href*="/collections/team-members"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/faqs"]::before,
+.nav__scroll .nav a[href*="/collections/faqs"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/collections/leads"]::before,
+.nav__scroll .nav a[href*="/collections/leads"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E") !important;
+}
+
+.nav__scroll .nav__link[href*="/globals/site-settings"]::before,
+.nav__scroll .nav a[href*="/globals/site-settings"]::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/%3E%3C/svg%3E") !important;
+}
+
+/* Bento Grid Dashboard Overrides */
+.vault-grid {
+  gap: 24px !important;
+}
+
+.vault-card, .mini-metric-card {
+  background-color: #ffffff !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.visitors-card {
+  background-image: linear-gradient(135deg, #133bc9 0%, #3b82f6 100%) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 10px 25px rgba(19, 59, 201, 0.2) !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+  border: none !important;
+}
+
+.vault-card:hover, .mini-metric-card:hover {
+  transform: translateY(-6px) scale(1.005) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(19, 59, 201, 0.12) !important;
+}
+
+.visitors-card:hover {
+  transform: translateY(-6px) scale(1.005) !important;
+  box-shadow: 0 20px 45px -10px rgba(19, 59, 201, 0.35) !important;
+}
+
+/* 5. Collapsed Sidebar State Styles */
+body.sidebar-collapsed {
+  --sidebar-width: 100px !important;
+}
+
+body.sidebar-collapsed .nav, 
+body.sidebar-collapsed aside.nav, 
+body.sidebar-collapsed aside.sidebar, 
+body.sidebar-collapsed .sidebar {
+  width: 100px !important;
+}
+
+body.sidebar-collapsed .template-default__wrap {
+  margin-left: 0 !important;
+}
+
+body.sidebar-collapsed .nav__scroll {
+  padding: 16px 8px !important;
+}
+
+/* Header container in collapsed state */
+body.sidebar-collapsed .custom-sidebar-header {
+  background-color: #133bc9 !important; /* Blue background when collapsed */
+  justify-content: center !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  cursor: pointer !important;
+  width: 44px !important;
+  height: 44px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-radius: 10px !important;
+}
+
+/* Logo container in collapsed state */
+body.sidebar-collapsed .custom-logo-container {
+  justify-content: center !important;
+  flex: none !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body.sidebar-collapsed .custom-sidebar-logo {
+  width: 30px !important;
+  height: 24px !important;
+  background-image: url('/CodeMoly Icon.svg') !important; /* Show only white icon */
+  background-position: center !important;
+}
+
+/* Hide collapse button inside container when collapsed */
+body.sidebar-collapsed .custom-collapse-btn {
+  display: none !important;
+}
+
+/* Hide navigation link text in collapsed state, show only centered icons */
+body.sidebar-collapsed .nav__link,
+body.sidebar-collapsed .nav a {
+  justify-content: center !important;
+  padding: 12px !important;
+  width: 44px !important;
+  height: 44px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.sidebar-collapsed .nav__link::before,
+body.sidebar-collapsed .nav a::before {
+  margin-right: 0 !important;
+}
+
+body.sidebar-collapsed .nav__link *,
+body.sidebar-collapsed .nav a * {
+  display: none !important;
+}
+
+/* 6. Custom Pages List Gray Theme & Layout Override */
+.vault-pages-wrapper,
+.vault-logos-wrapper {
+  background-color: #f4f6fa !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.template-default:has(.vault-pages-wrapper),
+.template-default__wrap:has(.vault-pages-wrapper),
+.template-default:has(.vault-logos-wrapper),
+.template-default__wrap:has(.vault-logos-wrapper),
+.template-default:has(.vault-editor-wrapper),
+.template-default__wrap:has(.vault-editor-wrapper) {
+  background-color: #f4f6fa !important;
+}
+
+/* Hide Payload's default header, breadcrumbs, and user icon when custom pages list or editor is active */
+.template-default:has(.vault-pages-wrapper) .app-header,
+.template-default:has(.vault-pages-wrapper) header.app-header,
+.template-default:has(.vault-pages-wrapper) .template-default__header,
+.template-default:has(.vault-logos-wrapper) .app-header,
+.template-default:has(.vault-logos-wrapper) header.app-header,
+.template-default:has(.vault-logos-wrapper) .template-default__header,
+.template-default:has(.vault-editor-wrapper) .app-header,
+.template-default:has(.vault-editor-wrapper) header.app-header,
+.template-default:has(.vault-editor-wrapper) .template-default__header {
+  display: none !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 7. Document Edit View Gray Background & Bento Grid Styling */
+.collection-edit,
+.collection-edit__wrapper,
+.collection-edit__form,
+.collection-edit__main,
+.collection-edit__sidebar,
+.template-default__content,
+.app-body,
+.document-fields,
+.form-fields,
+.gutter,
+.gutter--left,
+.gutter--right {
+  background-color: #f4f6fa !important; /* Force soft grey background */
+}
+
+/* Reset template default header wrapper to be transparent */
+.template-default__header {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Style the top header row (.doc-header) as a unified premium white bento card top-half */
+.doc-header,
+.collection-edit__header,
+.form-header,
+.document-header {
+  background: #ffffff !important;
+  border-radius: 24px 24px 0 0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-bottom: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01) !important;
+  padding: 24px 32px !important;
+  margin: 24px 32px 0 32px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Style the save/metadata controls bar (.doc-controls) as the bottom-half of the bento card */
+.doc-controls {
+  background: #ffffff !important;
+  border-radius: 0 0 24px 24px !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+  padding: 20px 32px !important;
+  margin: 0 32px 24px 32px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  
+  /* Disable sticky/fixed full-width styling of Payload's default controls */
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: auto !important;
+  height: auto !important;
+  transform: none !important;
+  z-index: 10 !important;
+}
+
+/* Reset controls inner wrappers to flow layout and transparent backgrounds */
+.doc-controls__wrapper,
+.doc-controls__content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Add padding to the edit form container so cards float nicely in grid alignment */
+.collection-edit__form,
+.collection-edit__wrapper {
+  padding: 0 32px 32px 32px !important;
+  box-sizing: border-box !important;
+}
+
+/* Adjust header h1 font and padding */
+.form-header h1,
+.collection-edit__header h1,
+.document-header h1,
+.doc-header__title {
+  font-size: 26px !important;
+  font-weight: 850 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
+  letter-spacing: -0.02em !important;
+  font-family: 'Sora', sans-serif !important;
+}
+
+/* Document Edit Controls Metadata styling */
+.doc-controls__meta {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  color: #64748b !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+}
+
+.doc-controls__list-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.doc-controls__label {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  color: #94a3b8 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-size: 10px !important;
+  margin: 0 !important;
+}
+
+.doc-controls__value {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  font-size: 11.5px !important;
+}
+
+/* Header actions and buttons container positioning */
+.doc-header__actions,
+.doc-controls__controls-wrapper,
+.doc-controls__controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+/* Button style overrides */
+.doc-controls__controls button.btn--style-primary,
+button.form-submit,
+.form-submit button,
+.btn--style-primary {
+  background: linear-gradient(135deg, #133bc9 0%, #3b82f6 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 700 !important;
+  padding: 10px 24px !important;
+  box-shadow: 0 4px 12px rgba(19, 59, 201, 0.25) !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  cursor: pointer !important;
+}
+
+.doc-controls__controls button.btn--style-primary:hover,
+button.form-submit:hover,
+.form-submit button:hover,
+.btn--style-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(19, 59, 201, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.doc-controls__controls button.btn--style-primary:active,
+button.form-submit:active,
+.form-submit button:active,
+.btn--style-primary:active {
+  transform: translateY(0) !important;
+}
+
+.btn--style-secondary,
+.btn--style-subtle,
+.doc-controls__controls button:not(.btn--style-primary),
+.doc-header__actions button,
+.doc-header__actions a {
+  background-color: #f8fafc !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #0f172a !important;
+  border-radius: 9999px !important;
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 700 !important;
+  padding: 10px 20px !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+}
+
+.btn--style-secondary:hover,
+.btn--style-subtle:hover,
+.doc-controls__controls button:not(.btn--style-primary):hover,
+.doc-header__actions button:hover,
+.doc-header__actions a:hover {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: #0f172a !important;
+}
+
+.doc-controls__dots {
+  border-radius: 50% !important;
+  background-color: #f8fafc !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.doc-controls__dots:hover {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Bento card styling for edit page fields - Extremely robust layout mapping */
+.collection-edit__main .form-fields > *,
+.collection-edit__main .render-fields > *,
+.collection-edit__main .form-grid > *,
+.collection-edit__main .document-fields > *,
+.collection-edit__sidebar .form-fields > *,
+.collection-edit__sidebar .render-fields > *,
+.collection-edit__sidebar .form-grid > *,
+.collection-edit__sidebar .document-fields > *,
+.collection-edit__main > .field-type,
+.collection-edit__sidebar > .field-type,
+.form-fields > .field-type,
+.render-fields > .field-type,
+.collection-edit__main .group-field,
+.collection-edit__main .blocks-field,
+.collection-edit__main .array-field,
+.collection-edit__sidebar-panel,
+.collection-edit__sidebar .sidebar-box,
+.collection-edit__sidebar .block {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+  padding: 28px !important;
+  margin-bottom: 24px !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+/* Ensure top-level row wrappers in form grids also behave as cards */
+.collection-edit__main > .form-grid > .row,
+.collection-edit__main > .render-fields > .row {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+  padding: 28px !important;
+  margin-bottom: 24px !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure nested elements do not get duplicate card backgrounds, borders, or double padding */
+.field-type.group .row,
+.field-type.blocks .row,
+.field-type.array .row,
+.field-type.group .field-type,
+.field-type.blocks .field-type,
+.field-type.array .field-type,
+.field-type.group [class*="field-type"],
+.field-type.blocks [class*="field-type"],
+.field-type.array [class*="field-type"],
+.collapsible .row,
+.collapsible .field-type,
+.collapsible [class*="field-type"],
+.array-field__row .row,
+.array-field__row .field-type,
+.array-field__row [class*="field-type"],
+[class*="group-field"] [class*="field-type"],
+[class*="blocks-field"] [class*="field-type"],
+[class*="array-field"] [class*="field-type"],
+[class*="group-field"] .row,
+[class*="blocks-field"] .row,
+[class*="array-field"] .row {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 16px !important;
+}
+
+/* Hover shadow effects for bento editor cards */
+.field-type.group:hover,
+.field-type.blocks:hover,
+.field-type.array:hover,
+.collection-edit__sidebar-panel:hover {
+  border-color: rgba(19, 59, 201, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Form field label typography styling */
+.field-label,
+label.field-label,
+label {
+  font-family: 'Sora', sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  margin-bottom: 8px !important;
+  text-transform: capitalize !important;
+}
+
+/* 8. Rounding and padding input fields, select boxes and textareas */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+textarea,
+select,
+.file-input,
+.input-wrapper input,
+.text-input,
+.textarea-input {
+  border-radius: 12px !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.08) !important;
+  background-color: #ffffff !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-size: 13.5px !important;
+  padding: 8px 12px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+/* React select rounding only (to prevent padding text cutoff/clipping) */
+.react-select__control,
+.react-select__value-container,
+.react-select__single-value,
+.react-select__multi-value {
+  border-radius: 12px !important;
+}
+
+/* Focused input states */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+.react-select__control--is-focused {
+  border-color: #133bc9 !important;
+  box-shadow: 0 0 0 3px rgba(19, 59, 201, 0.12) !important;
+  outline: none !important;
+}
+
+/* Collapsible block builder items styling (e.g. Layout blocks list) */
+.collapsible,
+.collapsible__toggle,
+.collapsible__content,
+.blocks-field__block,
+.block-receiver,
+.array-field__row {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+/* Nest block items beautifully */
+.collapsible {
+  background: #f8fafc !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-radius: 16px !important;
+  margin-bottom: 16px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01) !important;
+}
+
+.collapsible__toggle {
+  background-color: #f8fafc !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
+  padding: 12px 20px !important;
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+}
+
+.collapsible__content {
+  background: #ffffff !important;
+  padding: 20px !important;
+  border-top: none !important;
+}
+
+/* Style block builder add action buttons as elegant dashed bento cells */
+.blocks-field__actions button,
+.array-field__actions button,
+[class*="add-button"] {
+  background-color: #ffffff !important;
+  border: 1.5px dashed #cbd5e1 !important;
+  color: #64748b !important;
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  padding: 12px !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+}
+
+.blocks-field__actions button:hover,
+.array-field__actions button:hover {
+  border-color: #133bc9 !important;
+  color: #133bc9 !important;
+  background-color: rgba(19, 59, 201, 0.02) !important;
+}
+
+/* 9. Step Nav / Breadcrumbs Cleanup & Alignment Fixes */
+.step-nav, .step-nav__list {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #94a3b8 !important;
+  margin: 24px 32px 12px 32px !important;
+}
+
+/* Hide Dashboard link from breadcrumbs */
+.step-nav__list li:first-child {
+  display: none !important;
+}
+
+/* Remove separator slash from first visible item (the second child in DOM) */
+.step-nav__list li:nth-child(2)::before {
+  display: none !important;
+  content: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Inject folder icon 📁 before the collection name link */
+.step-nav__list li:nth-child(2) a::before,
+.step-nav__list li:nth-child(2):not(:has(a))::before {
+  display: inline-block !important;
+  content: "📁" !important;
+  width: auto !important;
+  height: auto !important;
+  margin-right: 6px !important;
+  font-size: 12px !important;
+  filter: grayscale(1) opacity(0.7) !important;
+}
+
+/* Completely remove prepended icons from breadcrumbs */
+.step-nav a::before,
+.step-nav a::after,
+.step-nav__list li::before,
+.step-nav__list li::after {
+  display: none;
+  content: none;
+}
+
+/* Hide built-in SVG icons inside breadcrumbs (e.g. Dashboard home/cube icon) */
+.step-nav svg,
+.step-nav__list svg,
+[class*="step-nav"] svg,
+[class*="step-nav"] [class*="icon"] {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Align breadcrumbs list item separators cleanly */
+.step-nav__list li + li::before {
+  display: inline-block !important;
+  content: "/" !important;
+  margin-right: 8px !important;
+  color: #cbd5e1 !important;
+}
+
+/* Ensure step nav items display flex to align cleanly */
+.step-nav__list li {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.step-nav a {
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.step-nav a:hover {
+  color: #133bc9 !important;
+}
+
+.step-nav__list li:last-child {
+  color: #133bc9 !important;
+}
