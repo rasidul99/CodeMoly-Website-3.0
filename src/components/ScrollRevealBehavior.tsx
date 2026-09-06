@@ -48,7 +48,7 @@ export default function ScrollRevealBehavior() {
         const groups = new Map<HTMLElement, HTMLElement[]>();
         visibleEntries.forEach((entry) => {
           const el = entry.target as HTMLElement;
-          const section = el.closest(".section-reveal") as HTMLElement || document.body;
+          const section = (el.closest(".section-reveal") as HTMLElement) || document.body;
           if (!groups.has(section)) {
             groups.set(section, []);
           }
@@ -73,7 +73,7 @@ export default function ScrollRevealBehavior() {
             );
 
             if (isStaggered && !hasExplicitDelay) {
-              element.style.transitionDelay = `${staggerIndex * 100}ms`;
+              element.style.transitionDelay = `${staggerIndex * 90}ms`;
               staggerIndex++;
             }
 
@@ -83,8 +83,8 @@ export default function ScrollRevealBehavior() {
         });
       },
       {
-        threshold: 0.001,
-        rootMargin: "300px 0px 500px 0px",
+        threshold: 0.08,
+        rootMargin: "0px 0px -60px 0px", // Only reveal when user scrolls into the section
       }
     );
 
@@ -109,18 +109,6 @@ export default function ScrollRevealBehavior() {
     // Run initial observation
     observeNewItems();
 
-    // Safety timer 1: Ensure all items reveal within 600ms regardless of viewport scroll
-    const safetyTimer1 = setTimeout(() => {
-      const items = Array.from(document.querySelectorAll<HTMLElement>(selectors.join(", ")));
-      items.forEach((item) => item.classList.add("is-visible"));
-    }, 600);
-
-    // Safety timer 2: Secondary check after 1500ms for slow networks / late hydrated components
-    const safetyTimer2 = setTimeout(() => {
-      const items = Array.from(document.querySelectorAll<HTMLElement>(selectors.join(", ")));
-      items.forEach((item) => item.classList.add("is-visible"));
-    }, 1500);
-
     // Setup MutationObserver to watch for additions/replacements of DOM nodes
     const mutationObserver = new MutationObserver(() => {
       observeNewItems();
@@ -132,8 +120,6 @@ export default function ScrollRevealBehavior() {
     });
 
     return () => {
-      clearTimeout(safetyTimer1);
-      clearTimeout(safetyTimer2);
       observer.disconnect();
       mutationObserver.disconnect();
       if (rafId !== null) {
