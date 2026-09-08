@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeMoly 3.0 — Behance Case Study | Section 3: WebGL 3D Physics & Motion Showcase</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glow-purple {
+      box-shadow: 0 0 50px rgba(99, 102, 241, 0.25);
+    }
+    .glow-blue {
+      box-shadow: 0 0 60px rgba(37, 99, 235, 0.35);
+    }
+    
+    /* Ultra-Smooth Executive Metallic 3D Headline */
+    .pro-cinematic-headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 30%, #E2E8F0 68%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
+    }
+
+    /* Subtle Executive Ambient Illumination */
+    .pro-headline-glow {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 750px;
+      height: 240px;
+      background: radial-gradient(ellipse at 50% 50%, rgba(56, 189, 248, 0.16) 0%, rgba(37, 99, 235, 0.08) 50%, transparent 75%);
+      filter: blur(65px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glass-card {
+      background: rgba(8, 12, 24, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    
+    /* Deep Luxury Black Gradient Background */
+    .hero-bg {
+      background: 
+        radial-gradient(circle at 50% 0%, rgba(20, 30, 60, 0.8) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(25, 15, 45, 0.6) 0%, transparent 50%),
+        linear-gradient(180deg, #000000 0%, #03050c 35%, #080c19 70%, #000000 100%);
+    }
+
+    /* Tech Grid Pattern with 4% Line Opacity & Random Multi-Point Masking */
+    .random-grid-mask {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 3.5rem 3.5rem;
+      mask-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 75% 15%, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 30% 90%, rgba(0, 0, 0, 0.5) 0%, transparent 35%);
+      mask-composite: add;
+      -webkit-mask-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 75% 15%, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 30% 90%, rgba(0, 0, 0, 0.5) 0%, transparent 35%);
+      -webkit-mask-composite: source-over;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen text-slate-100 antialiased selection:bg-blue-500 selection:text-white py-10 flex justify-center">
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       BEHANCE 1400PX CANVAS (SOLID WHITE OUTSIDE & LUXURY BLACK GRADIENT INSIDE)
+  ════════════════════════════════════════════════════════════════════════ -->
+  <div class="w-[1400px] max-w-[1400px] hero-bg min-h-screen p-12 lg:p-16 flex flex-col gap-24 lg:gap-32 shadow-[0_25px_80px_rgba(0,0,0,0.35)] rounded-3xl border border-slate-200 overflow-hidden shrink-0 relative">
+
+    <!-- Tech Grid Pattern Layer with 4% Opacity & Organic Random Multi-Point Masking -->
+    <div class="absolute inset-0 random-grid-mask pointer-events-none z-0"></div>
+
+    <!-- Top Background Graphic Artwork Layer (100% Opacity) -->
+    <div class="absolute top-0 left-0 right-0 w-full pointer-events-none z-0 opacity-100 mix-blend-screen">
+      <img src="./top_d.png" alt="Top Background Artwork" class="w-full h-auto block opacity-100" />
+    </div>
+
+    <!-- Full-Width Blue Horizon Glow Artwork -->
+    <div class="absolute top-[140px] left-0 right-0 w-full pointer-events-none z-0">
+      <img src="./hero_glow_bg.png" alt="Blue Horizon Glow Artwork" class="w-full h-auto block opacity-100 mix-blend-screen" />
+    </div>
+
+    <!-- Full-Width Cards Background Artwork Layer (30% Opacity) -->
+    <div class="absolute top-[1300px] left-0 right-0 w-full pointer-events-none z-0">
+      <img src="./cards background.png" alt="Cards Background Artwork" class="w-full h-auto block opacity-30 mix-blend-screen" />
+    </div>
+
+    <!-- ── HEADER: SLIDE 3 TITLE ───────────────────────────────────────────── -->
+    <header class="relative z-10 w-full text-center flex flex-col items-center justify-center pt-8 pb-4">
+      <div class="pro-headline-glow"></div>
+
+      <span class="text-xl font-extrabold uppercase tracking-[0.3em] text-blue-400 mb-4">
+        SLIDE 03 — INTERACTIVE STAGES & SKEUOMORPHIC UI
+      </span>
+
+      <h1 class="relative z-10 font-black text-[96px] tracking-tight leading-[1.1] pb-6 pt-2 pro-cinematic-headline mb-6 max-w-6xl inline-block">
+        3D WebGL Physics & Motion
+      </h1>
+
+      <p class="relative z-10 font-extrabold text-3xl text-slate-200 tracking-wide max-w-5xl mb-6 leading-relaxed">
+        Blending Three.js Particle Physics, Isometric AI Chips & Skeuomorphic Dark Blue Aesthetics.
+      </p>
+
+      <p class="relative z-10 text-xl font-medium text-slate-300 max-w-4xl leading-relaxed">
+        Every interactive stage was crafted to provide tactile user feedback, 60fps WebGL fluid animation, and enterprise-grade visual authority.
+      </p>
+    </header>
+
+    <!-- ── SECTION 1: INTERACTIVE 3D STAGES SHOWCASE ────────────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-widest text-blue-400">ENGINEERING EXCELLENCE</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Interactive 3D Stages & Physics</h2>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Custom WebGL shaders, particle rays, and interactive gravity ballpit engines running natively in Next.js 16.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-10">
+        
+        <!-- FEATURE CARD 1: 3D ISOMETRIC AI CHIP STAGE -->
+        <div class="glass-card p-12 rounded-[40px] flex flex-col justify-between gap-8 border border-blue-500/20 hover:border-blue-400/60 transition-all duration-500 group relative overflow-hidden min-h-[520px] shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          
+          <!-- Skeuomorphic Ambient Glow -->
+          <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-[40px] z-0">
+            <svg class="absolute bottom-0 right-0 w-full h-[60%] pointer-events-none" viewBox="0 0 400 200" fill="none" preserveAspectRatio="none">
+              <defs>
+                <filter id="webgl1-blur" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="35" />
+                </filter>
+              </defs>
+              <path d="M 0 100 C 140 50, 260 140, 400 70 L 400 200 L 0 200 Z" fill="#003BDE" filter="url(#webgl1-blur)" opacity="0.65" />
+              <path d="M 0 135 C 150 90, 250 160, 400 115 L 400 200 L 0 200 Z" fill="#00C8FF" filter="url(#webgl1-blur)" opacity="0.7" style="mix-blend-mode: screen;" />
+            </svg>
+          </div>
+
+          <!-- Card Header & Badge -->
+          <div class="relative z-10 flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+              <span class="px-5 py-2.5 rounded-full text-base font-extrabold uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-400/30 backdrop-blur-md">
+                3D ISOMETRIC STAGE
+              </span>
+              <span class="text-lg font-mono text-blue-400 font-bold">WebGL / Three.js</span>
+            </div>
+
+            <h3 class="text-4xl font-extrabold text-white group-hover:text-blue-300 transition-colors leading-snug pt-2">
+              AI Chip Isometric Stage & Particle Rays
+            </h3>
+            <p class="text-xl text-slate-300/90 leading-relaxed">
+              Interactive 3D AI processor block with animated SVG particle ray lines, hover lighting elevation, and real-time GPU hardware acceleration.
+            </p>
+          </div>
+
+          <!-- Interactive Visual Canvas Mockup -->
+          <div class="relative z-10 w-full h-64 rounded-2xl bg-gradient-to-tr from-[#09164f] via-[#101f63] to-[#1e3bb3] border border-blue-400/30 p-6 flex items-center justify-center overflow-hidden shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
+            <div class="w-44 h-44 rounded-2xl bg-gradient-to-br from-blue-400 via-indigo-600 to-slate-900 border-2 border-cyan-300/60 shadow-[0_0_40px_rgba(56,189,248,0.6)] transform rotate-12 flex flex-col items-center justify-center gap-2 relative">
+              <div class="w-12 h-12 rounded-xl bg-cyan-400/30 border border-cyan-200/50 flex items-center justify-center">
+                <span class="text-2xl font-black text-white">AI</span>
+              </div>
+              <span class="text-xs font-mono font-bold tracking-widest text-cyan-200">CODMOLY 3.0</span>
+            </div>
+          </div>
+
+          <!-- Tech Tag Badges -->
+          <div class="relative z-10 flex flex-wrap gap-3">
+            <span class="px-4 py-2 rounded-xl bg-blue-950/80 text-blue-200 border border-blue-400/30 text-lg font-bold backdrop-blur-md">Three.js</span>
+            <span class="px-4 py-2 rounded-xl bg-blue-950/80 text-blue-200 border border-blue-400/30 text-lg font-bold backdrop-blur-md">SVG Ray Particles</span>
+            <span class="px-4 py-2 rounded-xl bg-blue-950/80 text-blue-200 border border-blue-400/30 text-lg font-bold backdrop-blur-md">60 FPS Render</span>
+          </div>
+
+        </div>
+
+        <!-- FEATURE CARD 2: WEBGL INTERACTIVE BALLPIT ENGINE -->
+        <div class="glass-card p-12 rounded-[40px] flex flex-col justify-between gap-8 border border-blue-500/20 hover:border-blue-400/60 transition-all duration-500 group relative overflow-hidden min-h-[520px] shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          
+          <!-- Skeuomorphic Ambient Glow -->
+          <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-[40px] z-0">
+            <svg class="absolute bottom-0 right-0 w-full h-[60%] pointer-events-none" viewBox="0 0 400 200" fill="none" preserveAspectRatio="none">
+              <defs>
+                <filter id="webgl2-blur" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="35" />
+                </filter>
+              </defs>
+              <path d="M 0 100 C 140 50, 260 140, 400 70 L 400 200 L 0 200 Z" fill="#003BDE" filter="url(#webgl2-blur)" opacity="0.65" />
+              <path d="M 0 135 C 150 90, 250 160, 400 115 L 400 200 L 0 200 Z" fill="#00C8FF" filter="url(#webgl2-blur)" opacity="0.7" style="mix-blend-mode: screen;" />
+            </svg>
+          </div>
+
+          <!-- Card Header & Badge -->
+          <div class="relative z-10 flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+              <span class="px-5 py-2.5 rounded-full text-base font-extrabold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 backdrop-blur-md">
+                PHYSICS ENGINE
+              </span>
+              <span class="text-lg font-mono text-indigo-400 font-bold">Matter.js / WebGL</span>
+            </div>
+
+            <h3 class="text-4xl font-extrabold text-white group-hover:text-blue-300 transition-colors leading-snug pt-2">
+              Interactive Ballpit Collision Stage
+            </h3>
+            <p class="text-xl text-slate-300/90 leading-relaxed">
+              Dynamic 2D/3D sphere physics simulation where enterprise tech spheres collide, bounce, and respond to cursor velocity in real-time.
+            </p>
+          </div>
+
+          <!-- Interactive Visual Canvas Mockup -->
+          <div class="relative z-10 w-full h-64 rounded-2xl bg-gradient-to-tr from-[#030712] via-[#09164f] to-[#132c8e] border border-indigo-400/30 p-6 flex items-center justify-around overflow-hidden shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
+            <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-600 shadow-[0_0_25px_rgba(56,189,248,0.7)] flex items-center justify-center font-bold text-white text-lg">Next.js</div>
+            <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-700 shadow-[0_0_30px_rgba(168,85,247,0.7)] flex items-center justify-center font-bold text-white text-xl">AI</div>
+            <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-emerald-400 to-teal-600 shadow-[0_0_20px_rgba(52,211,153,0.7)] flex items-center justify-center font-bold text-white text-base">Payload</div>
+          </div>
+
+          <!-- Tech Tag Badges -->
+          <div class="relative z-10 flex flex-wrap gap-3">
+            <span class="px-4 py-2 rounded-xl bg-blue-950/80 text-blue-200 border border-blue-400/30 text-lg font-bold backdrop-blur-md">Matter.js</span>
+            <span class="px-4 py-2 rounded-xl bg-blue-950/80 text-blue-200 border border-blue-400/30 text-lg font-bold backdrop-blur-md">Cursor Momentum</span>
+            <span class="px-4 py-2 rounded-xl bg-blue-950/80 text-blue-200 border border-blue-400/30 text-lg font-bold backdrop-blur-md">Elastic Bounce</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── SECTION 2: ENTERPRISE SKEUOMORPHIC PRODUCTS & ERPS ──────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-widest text-blue-400">ENTERPRISE ARCHITECTURE</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Skeuomorphic Product Suites</h2>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Deep Royal Blue skeuomorphic cards with bottom-right glowing corner borders, tactile glass panels, and interactive multi-tab switchers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-8">
+        
+        <!-- MODULE 1: AI TRAINING & UPSKILLING -->
+        <div class="glass-card p-10 rounded-3xl flex flex-col justify-between gap-6 border border-blue-500/30 hover:border-blue-400/60 transition-all duration-300 group">
+          <div class="flex flex-col gap-3">
+            <span class="text-base font-extrabold uppercase tracking-widest text-blue-400">PRODUCT 01</span>
+            <h4 class="text-3xl font-extrabold text-white group-hover:text-blue-300 transition-colors">AI & Corporate Upskilling</h4>
+            <p class="text-lg text-slate-300 leading-relaxed">Interactive role-based learning tracks, team progress analytics & hands-on LLM prompt engineering.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">LLM Prompts</span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">Role Tracks</span>
+          </div>
+        </div>
+
+        <!-- MODULE 2: SMART RMG & GARMENTS ERP -->
+        <div class="glass-card p-10 rounded-3xl flex flex-col justify-between gap-6 border border-blue-500/30 hover:border-blue-400/60 transition-all duration-300 group">
+          <div class="flex flex-col gap-3">
+            <span class="text-base font-extrabold uppercase tracking-widest text-blue-400">PRODUCT 02</span>
+            <h4 class="text-3xl font-extrabold text-white group-hover:text-blue-300 transition-colors">Smart RMG Garments ERP</h4>
+            <p class="text-lg text-slate-300 leading-relaxed">Real-time factory floor tracking, automated EU compliance auditing & supply chain optimization.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">Factory Audit</span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">EU Compliance</span>
+          </div>
+        </div>
+
+        <!-- MODULE 3: LOGISTICS & FREIGHT MANAGEMENT -->
+        <div class="glass-card p-10 rounded-3xl flex flex-col justify-between gap-6 border border-blue-500/30 hover:border-blue-400/60 transition-all duration-300 group">
+          <div class="flex flex-col gap-3">
+            <span class="text-base font-extrabold uppercase tracking-widest text-blue-400">PRODUCT 03</span>
+            <h4 class="text-3xl font-extrabold text-white group-hover:text-blue-300 transition-colors">Logistics & Freight Suite</h4>
+            <p class="text-lg text-slate-300 leading-relaxed">Multi-modal shipment tracking, automated customs clearance & AI route cost optimization.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">Customs API</span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">Route AI</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── SECTION 3: FLUID MOBILE ERGONOMICS & SWITCHER BAR ───────────────── -->
+    <section class="glass-card p-14 rounded-[40px] flex flex-col gap-10 border border-blue-500/30">
+      <div class="flex flex-col gap-3 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-widest text-blue-400">MOBILE-FIRST ERGONOMICS</span>
+        <h3 class="text-4xl font-extrabold text-white">4-Tab Instant Switcher & 20% Scroll Trigger</h3>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Designed specifically for fluid mobile touch interaction. The 4-Tab bottom switcher allows instant section navigation without scrolling fatigue, complemented by a 20% scroll-to-top trigger button.
+        </p>
+      </div>
+
+      <!-- Mockup Switcher Bar Representation -->
+      <div class="w-full p-6 rounded-2xl bg-slate-950/90 border border-white/10 flex items-center justify-around gap-4">
+        <div class="flex-1 py-4 px-6 rounded-xl bg-blue-600 text-white font-extrabold text-xl text-center shadow-lg">01. Overview</div>
+        <div class="flex-1 py-4 px-6 rounded-xl bg-white/10 text-slate-300 font-bold text-xl text-center hover:bg-white/20 transition-colors">02. Services</div>
+        <div class="flex-1 py-4 px-6 rounded-xl bg-white/10 text-slate-300 font-bold text-xl text-center hover:bg-white/20 transition-colors">03. Products</div>
+        <div class="flex-1 py-4 px-6 rounded-xl bg-white/10 text-slate-300 font-bold text-xl text-center hover:bg-white/20 transition-colors">04. Contact</div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER CREDIT (MINIMUM 18PX) ────────────────────────────────────── -->
+    <footer class="relative z-10 text-center text-lg text-slate-400 py-8 border-t border-white/10">
+      Designed & Developed by Antigravity AI Pair Designer | CodeMoly 3.0 Behance Case Study — Section 3
+    </footer>
+
+  </div>
+
+</body>
+</html>
