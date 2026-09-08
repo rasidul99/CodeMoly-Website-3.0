@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeMoly 3.0 — Behance Case Study | Section 4: CMS Architecture, Global Hubs & Conclusion</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glow-purple {
+      box-shadow: 0 0 50px rgba(99, 102, 241, 0.25);
+    }
+    .glow-blue {
+      box-shadow: 0 0 60px rgba(37, 99, 235, 0.35);
+    }
+    
+    /* Ultra-Smooth Executive Metallic 3D Headline */
+    .pro-cinematic-headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 30%, #E2E8F0 68%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
+    }
+
+    /* Subtle Executive Ambient Illumination */
+    .pro-headline-glow {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 750px;
+      height: 240px;
+      background: radial-gradient(ellipse at 50% 50%, rgba(56, 189, 248, 0.16) 0%, rgba(37, 99, 235, 0.08) 50%, transparent 75%);
+      filter: blur(65px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glass-card {
+      background: rgba(8, 12, 24, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    
+    /* Deep Luxury Black Gradient Background */
+    .hero-bg {
+      background: 
+        radial-gradient(circle at 50% 0%, rgba(20, 30, 60, 0.8) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(25, 15, 45, 0.6) 0%, transparent 50%),
+        linear-gradient(180deg, #000000 0%, #03050c 35%, #080c19 70%, #000000 100%);
+    }
+
+    /* Tech Grid Pattern with 4% Line Opacity & Random Multi-Point Masking */
+    .random-grid-mask {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 3.5rem 3.5rem;
+      mask-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 75% 15%, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 30% 90%, rgba(0, 0, 0, 0.5) 0%, transparent 35%);
+      mask-composite: add;
+      -webkit-mask-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 75% 15%, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 30% 90%, rgba(0, 0, 0, 0.5) 0%, transparent 35%);
+      -webkit-mask-composite: source-over;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen text-slate-100 antialiased selection:bg-blue-500 selection:text-white py-10 flex justify-center">
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       BEHANCE 1400PX CANVAS (SOLID WHITE OUTSIDE & LUXURY BLACK GRADIENT INSIDE)
+  ════════════════════════════════════════════════════════════════════════ -->
+  <div class="w-[1400px] max-w-[1400px] hero-bg min-h-screen p-12 lg:p-16 flex flex-col gap-24 lg:gap-32 shadow-[0_25px_80px_rgba(0,0,0,0.35)] rounded-3xl border border-slate-200 overflow-hidden shrink-0 relative">
+
+    <!-- Tech Grid Pattern Layer with 4% Opacity & Organic Random Multi-Point Masking -->
+    <div class="absolute inset-0 random-grid-mask pointer-events-none z-0"></div>
+
+    <!-- Top Background Graphic Artwork Layer (100% Opacity) -->
+    <div class="absolute top-0 left-0 right-0 w-full pointer-events-none z-0 opacity-100 mix-blend-screen">
+      <img src="./top_d.png" alt="Top Background Artwork" class="w-full h-auto block opacity-100" />
+    </div>
+
+    <!-- Full-Width Blue Horizon Glow Artwork -->
+    <div class="absolute top-[140px] left-0 right-0 w-full pointer-events-none z-0">
+      <img src="./hero_glow_bg.png" alt="Blue Horizon Glow Artwork" class="w-full h-auto block opacity-100 mix-blend-screen" />
+    </div>
+
+    <!-- Full-Width Cards Background Artwork Layer (30% Opacity) -->
+    <div class="absolute top-[1300px] left-0 right-0 w-full pointer-events-none z-0">
+      <img src="./cards background.png" alt="Cards Background Artwork" class="w-full h-auto block opacity-30 mix-blend-screen" />
+    </div>
+
+    <!-- ── HEADER: SLIDE 4 TITLE ───────────────────────────────────────────── -->
+    <header class="relative z-10 w-full text-center flex flex-col items-center justify-center pt-8 pb-4">
+      <div class="pro-headline-glow"></div>
+
+      <span class="text-xl font-extrabold uppercase tracking-[0.3em] text-blue-400 mb-4">
+        SLIDE 04 — CMS ARCHITECTURE & CONCLUSION
+      </span>
+
+      <h1 class="relative z-10 font-black text-[96px] tracking-tight leading-[1.1] pb-6 pt-2 pro-cinematic-headline mb-6 max-w-6xl inline-block">
+        Payload CMS & Global Hubs
+      </h1>
+
+      <p class="relative z-10 font-extrabold text-3xl text-slate-200 tracking-wide max-w-5xl mb-6 leading-relaxed">
+        Powering High-Performance Headless Content & Global Operations in Paris, Vienna & Dhaka.
+      </p>
+
+      <p class="relative z-10 text-xl font-medium text-slate-300 max-w-4xl leading-relaxed">
+        A robust full-stack architecture built on Next.js 16 App Router, TypeScript schemas, Payload CMS 3.0, and automated CI/CD deployment pipelines.
+      </p>
+    </header>
+
+    <!-- ── SECTION 1: PAYLOAD CMS HEADLESS ARCHITECTURE ──────────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-widest text-blue-400">DATA ENGINE</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Payload CMS 3.0 Headless Integration</h2>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Type-safe GraphQL & REST endpoints delivering sub-millisecond dynamic content rendering across global CDN edge nodes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-8">
+        
+        <!-- CMS CARD 1: TYPE-SAFE COLLECTIONS -->
+        <div class="glass-card p-10 rounded-3xl flex flex-col justify-between gap-6 border border-blue-500/30 hover:border-blue-400/60 transition-all duration-300 group">
+          <div class="flex flex-col gap-3">
+            <span class="text-base font-extrabold uppercase tracking-widest text-blue-400">01. SCHEMA DESIGN</span>
+            <h4 class="text-3xl font-extrabold text-white group-hover:text-blue-300 transition-colors">TypeScript Collections</h4>
+            <p class="text-lg text-slate-300 leading-relaxed">Strictly typed content definitions for Pages, Products, Media, Partner Logos, and Testimonials.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">TypeScript</span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">Zod Validation</span>
+          </div>
+        </div>
+
+        <!-- CMS CARD 2: CUSTOM ADMIN DASHBOARD -->
+        <div class="glass-card p-10 rounded-3xl flex flex-col justify-between gap-6 border border-blue-500/30 hover:border-blue-400/60 transition-all duration-300 group">
+          <div class="flex flex-col gap-3">
+            <span class="text-base font-extrabold uppercase tracking-widest text-blue-400">02. ADMIN UX</span>
+            <h4 class="text-3xl font-extrabold text-white group-hover:text-blue-300 transition-colors">Skeuomorphic Admin UI</h4>
+            <p class="text-lg text-slate-300 leading-relaxed">Custom CSS admin overrides matching CodeMoly 3.0 dark skeuomorphic aesthetics for content editors.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">Custom Admin CSS</span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">Live Preview</span>
+          </div>
+        </div>
+
+        <!-- CMS CARD 3: GRAPHQL EDGE CACHING -->
+        <div class="glass-card p-10 rounded-3xl flex flex-col justify-between gap-6 border border-blue-500/30 hover:border-blue-400/60 transition-all duration-300 group">
+          <div class="flex flex-col gap-3">
+            <span class="text-base font-extrabold uppercase tracking-widest text-blue-400">03. EDGE CACHING</span>
+            <h4 class="text-3xl font-extrabold text-white group-hover:text-blue-300 transition-colors">GraphQL Edge CDN</h4>
+            <p class="text-lg text-slate-300 leading-relaxed">Ultra-fast global edge caching with automatic revalidation on content updates.</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">GraphQL</span>
+            <span class="px-3.5 py-1.5 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 text-base font-bold">Vercel Edge</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── SECTION 2: GLOBAL HUBS (PARIS, VIENNA, DHAKA) ───────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-widest text-blue-400">GLOBAL FOOTPRINT</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Worldwide Engineering Hubs</h2>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Operating across major technology corridors in Europe and Asia-Pacific to deliver 24/7 enterprise software solutions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-8 text-left">
+        
+        <!-- HUB 1: PARIS -->
+        <div class="glass-card p-10 rounded-3xl flex flex-col gap-6 border border-blue-500/30">
+          <div class="flex items-center gap-4">
+            <span class="text-3xl font-black text-blue-400">🇫🇷</span>
+            <div>
+              <h4 class="text-2xl font-extrabold text-white">Paris Hub</h4>
+              <span class="text-base text-slate-400 font-mono">European Union HQ</span>
+            </div>
+          </div>
+          <p class="text-lg text-slate-300 leading-relaxed">Executive Design Strategy, AI Research & EU Enterprise Partnerships.</p>
+        </div>
+
+        <!-- HUB 2: VIENNA -->
+        <div class="glass-card p-10 rounded-3xl flex flex-col gap-6 border border-blue-500/30">
+          <div class="flex items-center gap-4">
+            <span class="text-3xl font-black text-blue-400">🇦🇹</span>
+            <div>
+              <h4 class="text-2xl font-extrabold text-white">Vienna Hub</h4>
+              <span class="text-base text-slate-400 font-mono">DACH Operations</span>
+            </div>
+          </div>
+          <p class="text-lg text-slate-300 leading-relaxed">Systems Architecture, WebGL Interactive Physics & Product Engineering.</p>
+        </div>
+
+        <!-- HUB 3: DHAKA -->
+        <div class="glass-card p-10 rounded-3xl flex flex-col gap-6 border border-blue-500/30">
+          <div class="flex items-center gap-4">
+            <span class="text-3xl font-black text-blue-400">🇧🇩</span>
+            <div>
+              <h4 class="text-2xl font-extrabold text-white">Dhaka Hub</h4>
+              <span class="text-base text-slate-400 font-mono">APAC R&D Center</span>
+            </div>
+          </div>
+          <p class="text-lg text-slate-300 leading-relaxed">Smart RMG Garments ERP, Logistics Automation & High-Scale Core R&D.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── SECTION 3: CONCLUSION & CALL TO ACTION ───────────────────────────── -->
+    <section class="glass-card p-16 rounded-[40px] flex flex-col items-center text-center gap-10 border border-blue-400/40 glow-purple relative overflow-hidden">
+      
+      <div class="relative z-10 flex flex-col items-center gap-6 max-w-4xl">
+        <span class="px-6 py-2.5 rounded-full text-base font-extrabold uppercase tracking-widest bg-blue-500/20 text-blue-300 border border-blue-400/30 backdrop-blur-md">
+          READY FOR TRANSFORMATION?
+        </span>
+
+        <h2 class="text-6xl font-black text-white pro-cinematic-headline tracking-tight leading-tight">
+          Ready to Build the Future of Enterprise AI?
+        </h2>
+
+        <p class="text-2xl font-medium text-slate-200 leading-relaxed max-w-3xl">
+          Let’s elevate your corporate platform with award-winning UI/UX, 3D WebGL physics, and high-scale Next.js architecture.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="relative z-10 flex items-center justify-center gap-6 pt-4">
+        <a href="https://codemoly.com" target="_blank" class="px-10 py-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-2xl shadow-[0_15px_35px_rgba(37,99,235,0.5)] hover:scale-105 transition-transform">
+          Explore CodeMoly 3.0 Live
+        </a>
+        <a href="mailto:contact@codemoly.com" class="px-10 py-5 rounded-2xl bg-white/10 text-slate-200 font-extrabold text-2xl border border-white/20 hover:bg-white/20 transition-colors">
+          Contact Engineering Team
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ── FOOTER CREDIT (MINIMUM 18PX) ────────────────────────────────────── -->
+    <footer class="relative z-10 text-center text-lg text-slate-400 py-8 border-t border-white/10">
+      Designed & Developed by Antigravity AI Pair Designer | CodeMoly 3.0 Behance Case Study — Section 4 (Conclusion)
+    </footer>
+
+  </div>
+
+</body>
+</html>
