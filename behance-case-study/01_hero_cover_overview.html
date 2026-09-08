@@ -338,146 +338,136 @@
 
     </section>
 
-    <!-- ── SECTION 3: WHY I REVAMPED THE OLD WEBSITE (LEFT ANALYSIS, RIGHT 16:9 IMAGE) ── -->
+    <!-- ── SECTION 3: WHY I REVAMPED THE OLD WEBSITE (SUB-HEADLINE -> 16:9 IMAGE -> ANALYSIS) ── -->
     <section class="relative z-10 flex flex-col gap-12 w-full">
       
-      <!-- Section Header -->
+      <!-- Section Header (Without Live Link Button) -->
       <div class="flex flex-col gap-4 text-left">
-        <div class="flex items-center justify-between">
-          <span class="text-lg font-extrabold uppercase tracking-widest text-blue-400">THE REVAMP RATIONALE</span>
-          <a href="https://codemoly.com/" target="_blank" class="px-5 py-2 rounded-full text-base font-bold bg-blue-500/10 text-blue-300 border border-blue-400/30 hover:bg-blue-500/20 transition-all">
-            Live Old Website: codemoly.com ↗
-          </a>
-        </div>
+        <span class="text-lg font-extrabold uppercase tracking-widest text-blue-400">THE REVAMP RATIONALE</span>
         <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Why I Revamped the Old Website</h2>
         <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
           An in-depth analysis of the legacy platform (<a href="https://codemoly.com/" target="_blank" class="text-blue-400 underline font-bold">codemoly.com</a>) — identifying structural friction, generic positioning, and the urgent need for an enterprise-level digital transformation.
         </p>
       </div>
 
-      <!-- Left Text (Analysis) & Right Image (16:9 Ratio) Container -->
-      <div class="grid grid-cols-12 gap-10 items-stretch w-full">
+      <!-- 16:9 Ratio Image Container (Directly After Sub-Headline) -->
+      <div class="w-full flex flex-col gap-6 glass-card p-6 lg:p-8 rounded-[36px] border border-blue-500/30 bg-slate-950/90 shadow-2xl">
         
-        <!-- Left Side: In-Depth Diagnostic Analysis (Col Span 7) -->
-        <div class="col-span-7 flex flex-col justify-between gap-8 glass-card p-10 lg:p-12 rounded-[36px] border border-blue-500/30 bg-slate-950/80 shadow-2xl">
+        <!-- Browser Mockup Window Header -->
+        <div class="flex items-center justify-between px-6 py-3.5 rounded-2xl bg-black/70 border border-white/10">
+          <div class="flex items-center gap-2">
+            <div class="w-3.5 h-3.5 rounded-full bg-red-500/80"></div>
+            <div class="w-3.5 h-3.5 rounded-full bg-yellow-500/80"></div>
+            <div class="w-3.5 h-3.5 rounded-full bg-green-500/80"></div>
+          </div>
+          <span class="text-base font-mono text-slate-300">https://codemoly.com/</span>
+          <span class="px-3 py-1 rounded-lg text-xs font-mono font-bold bg-red-500/20 text-red-300 border border-red-500/30">
+            LEGACY AUDIT TARGET
+          </span>
+        </div>
+
+        <!-- 16:9 Ratio Aspect Container -->
+        <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-red-500/40 bg-slate-950 shadow-2xl group">
           
-          <div class="flex flex-col gap-6">
-            <span class="text-sm font-black uppercase tracking-[0.25em] text-red-400">DIAGNOSIS & STRATEGIC GAPS</span>
-            <h3 class="text-3xl lg:text-4xl font-black text-white leading-tight">
-              A Company Growing Faster Than Its Digital Presence
-            </h3>
-            <p class="text-xl text-slate-300 leading-relaxed">
-              When auditing the original website at <strong class="text-white">codemoly.com</strong>, the core problem became immediately apparent: CodeMoly had matured into an advanced software engineering partner building custom AI pipelines and industrial RMG ERP solutions, but its web presence still looked like a conventional SaaS template.
+          <!-- Old Website Screenshot Cropped at 16:9 -->
+          <img src="./old_codemoly_full.png" alt="Legacy CodeMoly Website (codemoly.com) Interface" class="w-full h-full object-cover object-top block transition-transform duration-700 group-hover:scale-105 opacity-90" />
+          
+          <!-- Gradient Overlay Mask -->
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+
+          <!-- 16:9 Annotation Badge -->
+          <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none">
+            <span class="px-4 py-2 rounded-xl bg-black/80 backdrop-blur-md border border-white/20 text-base font-bold text-red-300">
+              Legacy Interface (codemoly.com)
+            </span>
+            <span class="px-4 py-2 rounded-xl bg-black/80 backdrop-blur-md border border-white/20 text-base font-mono text-slate-300">
+              16:9 High-Fidelity Capture
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Visual Audit Highlights Under Image -->
+        <div class="grid grid-cols-3 gap-6 p-6 rounded-2xl bg-black/50 border border-white/10 text-lg text-slate-300">
+          <div class="flex flex-col gap-1 border-r border-white/10 pr-4">
+            <span class="text-sm font-extrabold uppercase text-slate-400">INTERFACE PARADIGM</span>
+            <span class="text-xl font-bold text-white font-mono">Static Informational</span>
+          </div>
+          <div class="flex flex-col gap-1 border-r border-white/10 pr-4">
+            <span class="text-sm font-extrabold uppercase text-slate-400">HERO DYNAMIC</span>
+            <span class="text-xl font-bold text-white font-mono">Embedded YouTube Player</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="text-sm font-extrabold uppercase text-slate-400">PRIMARY BOTTLENECK</span>
+            <span class="text-xl font-bold text-red-400 font-mono">Template-Heavy Grid</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- In-Depth Diagnostic Analysis (Below Image) -->
+      <div class="w-full flex flex-col gap-8 glass-card p-10 lg:p-12 rounded-[36px] border border-blue-500/30 bg-slate-950/80 shadow-2xl">
+        
+        <div class="flex flex-col gap-4">
+          <span class="text-sm font-black uppercase tracking-[0.25em] text-red-400">DIAGNOSIS & STRATEGIC GAPS</span>
+          <h3 class="text-3xl lg:text-4xl font-black text-white leading-tight">
+            A Company Growing Faster Than Its Digital Presence
+          </h3>
+          <p class="text-xl text-slate-300 leading-relaxed max-w-5xl">
+            When auditing the original website at <strong class="text-white">codemoly.com</strong>, the core problem became immediately apparent: CodeMoly had matured into an advanced software engineering partner building custom AI pipelines and industrial RMG ERP solutions, but its web presence still looked like a conventional SaaS template.
+          </p>
+        </div>
+
+        <!-- 4 Deep Analysis Points (Min 18px Text Size) -->
+        <div class="grid grid-cols-4 gap-6 pt-2">
+          
+          <div class="p-6 rounded-2xl bg-black/50 border border-red-500/20 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-lg">01</span>
+              <h4 class="text-xl font-bold text-white">Brand Gap</h4>
+            </div>
+            <p class="text-lg text-slate-300 leading-relaxed">
+              Heavy focus on basic n8n workflows obscured CodeMoly’s enterprise engineering and custom AI capabilities.
             </p>
           </div>
 
-          <!-- 4 Deep Analysis Points (Min 18px Text Size) -->
-          <div class="grid grid-cols-2 gap-6 pt-2">
-            
-            <div class="p-6 rounded-2xl bg-black/50 border border-red-500/20 flex flex-col gap-2.5">
-              <div class="flex items-center gap-3">
-                <span class="px-2.5 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-base">01</span>
-                <h4 class="text-xl font-bold text-white">Brand Perception Gap</h4>
-              </div>
-              <p class="text-lg text-slate-300 leading-relaxed">
-                Heavy focus on basic n8n workflows obscured CodeMoly’s enterprise engineering and custom AI capabilities.
-              </p>
+          <div class="p-6 rounded-2xl bg-black/50 border border-red-500/20 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-lg">02</span>
+              <h4 class="text-xl font-bold text-white">Passive UX</h4>
             </div>
-
-            <div class="p-6 rounded-2xl bg-black/50 border border-red-500/20 flex flex-col gap-2.5">
-              <div class="flex items-center gap-3">
-                <span class="px-2.5 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-base">02</span>
-                <h4 class="text-xl font-bold text-white">Static & Passive UX</h4>
-              </div>
-              <p class="text-lg text-slate-300 leading-relaxed">
-                Relying on a standard YouTube video iframe and static cards without interactive WebGL physics or real-time depth.
-              </p>
-            </div>
-
-            <div class="p-6 rounded-2xl bg-black/50 border border-red-500/20 flex flex-col gap-2.5">
-              <div class="flex items-center gap-3">
-                <span class="px-2.5 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-base">03</span>
-                <h4 class="text-xl font-bold text-white">Repetitive Card Fatigue</h4>
-              </div>
-              <p class="text-lg text-slate-300 leading-relaxed">
-                Monotonous card grids with uniform layouts caused browsing fatigue and obscured key product value propositions.
-              </p>
-            </div>
-
-            <div class="p-6 rounded-2xl bg-black/50 border border-red-500/20 flex flex-col gap-2.5">
-              <div class="flex items-center gap-3">
-                <span class="px-2.5 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-base">04</span>
-                <h4 class="text-xl font-bold text-white">Mobile Touch Friction</h4>
-              </div>
-              <p class="text-lg text-slate-300 leading-relaxed">
-                Rigid desktop-centric grids lacked tactile mobile ergonomics, requiring excessive vertical scrolling.
-              </p>
-            </div>
-
+            <p class="text-lg text-slate-300 leading-relaxed">
+              Relying on a standard YouTube video iframe and static cards without interactive WebGL physics or real-time depth.
+            </p>
           </div>
 
-          <!-- Senior Strategic Finding Quote -->
-          <div class="p-6 rounded-2xl bg-gradient-to-r from-red-950/40 via-blue-950/30 to-slate-950/60 border-l-4 border-l-red-500 border border-white/10">
-            <p class="text-xl font-bold text-slate-200 italic leading-relaxed">
-              "The challenge wasn't just modernizing UI components — it was closing the gap between CodeMoly's true technical capabilities and its global brand perception."
+          <div class="p-6 rounded-2xl bg-black/50 border border-red-500/20 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-lg">03</span>
+              <h4 class="text-xl font-bold text-white">Card Fatigue</h4>
+            </div>
+            <p class="text-lg text-slate-300 leading-relaxed">
+              Monotonous card grids with uniform layouts caused browsing fatigue and obscured key product value propositions.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-black/50 border border-red-500/20 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-lg">04</span>
+              <h4 class="text-xl font-bold text-white">Touch Friction</h4>
+            </div>
+            <p class="text-lg text-slate-300 leading-relaxed">
+              Rigid desktop-centric grids lacked tactile mobile ergonomics, requiring excessive vertical scrolling.
             </p>
           </div>
 
         </div>
 
-        <!-- Right Side: 16:9 Ratio Image Showcase (Col Span 5) -->
-        <div class="col-span-5 flex flex-col justify-between gap-6 glass-card p-6 lg:p-8 rounded-[36px] border border-blue-500/30 bg-slate-950/90 shadow-2xl">
-          
-          <!-- Browser Mockup Window Header -->
-          <div class="flex items-center justify-between px-4 py-3 rounded-2xl bg-black/70 border border-white/10">
-            <div class="flex items-center gap-2">
-              <div class="w-3.5 h-3.5 rounded-full bg-red-500/80"></div>
-              <div class="w-3.5 h-3.5 rounded-full bg-yellow-500/80"></div>
-              <div class="w-3.5 h-3.5 rounded-full bg-green-500/80"></div>
-            </div>
-            <span class="text-sm font-mono text-slate-400">https://codemoly.com/</span>
-            <span class="px-2.5 py-0.5 rounded-md text-xs font-mono font-bold bg-red-500/20 text-red-300 border border-red-500/30">
-              AUDIT TARGET
-            </span>
-          </div>
-
-          <!-- 16:9 Ratio Aspect Container -->
-          <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-red-500/40 bg-slate-950 shadow-2xl group">
-            
-            <!-- Old Website Screenshot Cropped at 16:9 -->
-            <img src="./old_codemoly_full.png" alt="Legacy CodeMoly Website (codemoly.com) Interface" class="w-full h-full object-cover object-top block transition-transform duration-700 group-hover:scale-105 opacity-90" />
-            
-            <!-- Gradient Overlay Mask -->
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
-
-            <!-- 16:9 Annotation Badge -->
-            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-              <span class="px-3.5 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/20 text-sm font-bold text-red-300">
-                Legacy Interface (codemoly.com)
-              </span>
-              <span class="px-3.5 py-1.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/20 text-sm font-mono text-slate-300">
-                16:9 Capture
-              </span>
-            </div>
-
-          </div>
-
-          <!-- Visual Audit Highlights Under Image -->
-          <div class="flex flex-col gap-3 p-5 rounded-2xl bg-black/50 border border-white/10 text-lg text-slate-300">
-            <div class="flex items-center justify-between border-b border-white/10 pb-2">
-              <span class="font-bold text-white">Interface Paradigm</span>
-              <span class="text-red-400 font-mono">Static Informational</span>
-            </div>
-            <div class="flex items-center justify-between border-b border-white/10 pb-2">
-              <span class="font-bold text-white">Hero Dynamic</span>
-              <span class="text-red-400 font-mono">Embedded YouTube Player</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="font-bold text-white">Primary Bottleneck</span>
-              <span class="text-red-400 font-mono">Template-Heavy Grid</span>
-            </div>
-          </div>
-
+        <!-- Senior Strategic Finding Quote -->
+        <div class="p-6 rounded-2xl bg-gradient-to-r from-red-950/40 via-blue-950/30 to-slate-950/60 border-l-4 border-l-red-500 border border-white/10">
+          <p class="text-xl font-bold text-slate-200 italic leading-relaxed">
+            "The challenge wasn't just modernizing UI components — it was closing the gap between CodeMoly's true technical capabilities and its global brand perception."
+          </p>
         </div>
 
       </div>
