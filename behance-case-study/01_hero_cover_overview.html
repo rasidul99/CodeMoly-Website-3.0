@@ -17,38 +17,39 @@
       box-shadow: 0 0 60px rgba(37, 99, 235, 0.35);
     }
     
-    /* Ultra-Cinematic 3D Headline Gradient, Lighting & Opacity Mask */
-    .cinematic-headline {
-      background: linear-gradient(175deg, #FFFFFF 0%, #F0F9FF 30%, #38BDF8 68%, #0284C7 100%);
+    /* Ultra-Smooth Executive Metallic 3D Headline */
+    .pro-cinematic-headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 30%, #E2E8F0 68%, #94A3B8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: 
-        drop-shadow(0 2px 4px rgba(255, 255, 255, 0.5))
-        drop-shadow(0 14px 28px rgba(0, 0, 0, 0.95))
-        drop-shadow(0 30px 60px rgba(56, 189, 248, 0.45));
-      -webkit-mask-image: linear-gradient(180deg, #000000 0%, rgba(0,0,0,0.96) 65%, rgba(0,0,0,0.78) 100%);
-      mask-image: linear-gradient(180deg, #000000 0%, rgba(0,0,0,0.96) 65%, rgba(0,0,0,0.78) 100%);
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
     }
 
-    /* Cinematic Volumetric Backlight Glow */
-    .cinematic-backlight {
+    /* Subtle Executive Ambient Illumination (Soft & Smooth, No Harsh Blobs) */
+    .pro-headline-glow {
       position: absolute;
-      top: -20px;
+      top: -30px;
       left: 50%;
       transform: translateX(-50%);
-      width: 750px;
-      height: 240px;
-      background: radial-gradient(ellipse at 50% 50%, rgba(56, 189, 248, 0.38) 0%, rgba(37, 99, 235, 0.22) 50%, transparent 75%);
-      filter: blur(45px);
+      width: 700px;
+      height: 220px;
+      background: radial-gradient(ellipse at 50% 50%, rgba(56, 189, 248, 0.16) 0%, rgba(37, 99, 235, 0.08) 50%, transparent 75%);
+      filter: blur(65px);
       pointer-events: none;
       z-index: 0;
     }
 
-    .cinematic-subtitle {
-      background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.8));
+    /* Sleek Executive Subtitle */
+    .pro-cinematic-subtitle {
+      color: #CBD5E1;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.45;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     }
 
     .glass-card {
@@ -115,16 +116,16 @@
     <!-- ── SECTION 1: HERO COVER (DESKTOP SCALED & NO CLIPPING) ───────────── -->
     <header class="relative z-10 w-full text-center flex flex-col items-center justify-center pt-8 pb-4">
       
-      <!-- Volumetric Cinematic Light Beam -->
-      <div class="cinematic-backlight"></div>
+      <!-- Subtle Executive Ambient Glow -->
+      <div class="pro-headline-glow"></div>
 
-      <!-- Main Title (108px Bold Display with White-Electric Blue 3D Gradient, Lighting & Opacity Masking) -->
-      <h1 class="relative z-10 font-black text-[108px] tracking-tight leading-[1.2] pb-6 pt-2 cinematic-headline mb-6 max-w-6xl inline-block">
+      <!-- Main Title (108px Ultra-Smooth Platinum Silver Metallic Display) -->
+      <h1 class="relative z-10 font-black text-[108px] tracking-tight pb-6 pt-2 pro-cinematic-headline mb-6 max-w-6xl inline-block">
         CodeMoly 3.0
       </h1>
 
-      <!-- Main Subtitle (30px Bold Display) -->
-      <p class="relative z-10 font-bold text-3xl cinematic-subtitle tracking-wide max-w-5xl mb-6 leading-relaxed">
+      <!-- Main Subtitle (30px Executive Silver Display) -->
+      <p class="relative z-10 font-bold text-3xl pro-cinematic-subtitle tracking-wide max-w-5xl mb-6 leading-relaxed">
         Redefining Enterprise AI, Software Engineering & Global Digital Transformation.
       </p>
 
@@ -343,7 +344,7 @@
       <!-- Section Header -->
       <div class="flex flex-col gap-4 text-left">
         <span class="text-lg font-extrabold uppercase tracking-widest text-blue-400">THE PARADIGM SHIFT</span>
-        <h2 class="text-5xl font-extrabold text-white cinematic-headline tracking-tight">Before vs After Transformation</h2>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Before vs After Transformation</h2>
         <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
           Comparing the legacy corporate website (<a href="https://codemoly.com/" target="_blank" class="text-blue-400 underline font-bold">codemoly.com</a>) against the revamped CodeMoly 3.0 digital ecosystem.
         </p>
