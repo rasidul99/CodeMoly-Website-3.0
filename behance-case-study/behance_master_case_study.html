@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeMoly 3.0 — Behance Master Case Study (All 13 Modules Complete)</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    /* Ultra-Smooth Executive Metallic 3D Headline */
+    .pro-cinematic-headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 30%, #E2E8F0 68%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.75));
+    }
+
+    /* Executive Subtitle */
+    .pro-cinematic-subtitle {
+      color: #CBD5E1;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.45;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Ambient Illumination Spotlight */
+    .pro-headline-glow {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 750px;
+      height: 240px;
+      background: radial-gradient(ellipse at 50% 50%, rgba(56, 189, 248, 0.16) 0%, rgba(37, 99, 235, 0.08) 50%, transparent 75%);
+      filter: blur(65px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glass-card {
+      background: rgba(8, 12, 24, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    
+    /* Deep Luxury Black Gradient Background */
+    .hero-bg {
+      background: 
+        radial-gradient(circle at 50% 0%, rgba(20, 30, 60, 0.8) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(25, 15, 45, 0.6) 0%, transparent 50%),
+        linear-gradient(180deg, #000000 0%, #03050c 35%, #080c19 70%, #000000 100%);
+    }
+
+    /* Tech Grid Pattern with 4% Line Opacity & Random Multi-Point Masking */
+    .random-grid-mask {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 3.5rem 3.5rem;
+      mask-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 75% 15%, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 30% 90%, rgba(0, 0, 0, 0.5) 0%, transparent 35%);
+      mask-composite: add;
+      -webkit-mask-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 75% 15%, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 30% 90%, rgba(0, 0, 0, 0.5) 0%, transparent 35%);
+      -webkit-mask-composite: source-over;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen text-slate-100 antialiased selection:bg-blue-500 selection:text-white py-10 flex justify-center">
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       BEHANCE 1400PX MASTER CANVAS (ALL-IN-ONE MASTER EXPORT)
+  ════════════════════════════════════════════════════════════════════════ -->
+  <div class="w-[1400px] max-w-[1400px] hero-bg min-h-screen p-12 lg:p-16 flex flex-col gap-24 lg:gap-32 shadow-[0_25px_80px_rgba(0,0,0,0.35)] rounded-3xl border border-slate-200 overflow-hidden shrink-0 relative">
+
+    <!-- Tech Grid Pattern Layer with 4% Opacity & Organic Random Multi-Point Masking -->
+    <div class="absolute inset-0 random-grid-mask pointer-events-none z-0"></div>
+
+    <!-- Top Background Graphic Artwork Layer (100% Opacity) -->
+    <div class="absolute top-0 left-0 right-0 w-full pointer-events-none z-0 opacity-100 mix-blend-screen">
+      <img src="./top_d.png" alt="Top Background Artwork" class="w-full h-auto block opacity-100" />
+    </div>
+
+    <!-- Full-Width Blue Horizon Glow Artwork -->
+    <div class="absolute top-[140px] left-0 right-0 w-full pointer-events-none z-0">
+      <img src="./hero_glow_bg.png" alt="Blue Horizon Glow Artwork" class="w-full h-auto block opacity-100 mix-blend-screen" />
+    </div>
+
+    <!-- ── 01 — COVER (MODULE 01) ─────────────────────────────────────────── -->
+    <header class="relative z-10 w-full text-center flex flex-col items-center justify-center pt-8 pb-4">
+      <div class="pro-headline-glow"></div>
+
+      <div class="flex items-center gap-4 mb-6">
+        <span class="px-5 py-2 rounded-full text-base font-extrabold uppercase tracking-[0.2em] bg-blue-500/20 text-blue-300 border border-blue-400/30 backdrop-blur-md">
+          WEBSITE REDESIGN & FULL-STACK DEVELOPMENT
+        </span>
+      </div>
+
+      <h1 class="relative z-10 font-black text-[108px] tracking-tight leading-[1.05] pb-6 pt-2 pro-cinematic-headline mb-6 max-w-6xl inline-block">
+        CodeMoly 3.0
+      </h1>
+
+      <p class="relative z-10 font-extrabold text-3xl pro-cinematic-subtitle tracking-wide max-w-5xl mb-6 leading-relaxed">
+        Transforming Businesses Through Vision & AI Innovation.
+      </p>
+
+      <p class="relative z-10 text-xl font-medium text-slate-300 max-w-4xl leading-relaxed mb-10">
+        From a conventional corporate site to an interactive digital experience — fusing WebGL 3D physics, dark skeuomorphic UI, and Payload CMS 3.0 scalability.
+      </p>
+
+      <div class="relative z-10 glass-card px-8 py-4 rounded-2xl border border-blue-400/30 flex items-center gap-6 shadow-xl mb-12">
+        <div class="flex flex-col text-left">
+          <span class="text-sm uppercase tracking-widest text-slate-400 font-bold">PROJECT CREATOR & LEAD</span>
+          <span class="text-2xl font-black text-white">Designed & Developed by Rasidul Islam</span>
+        </div>
+        <div class="h-10 w-px bg-white/20"></div>
+        <div class="flex gap-3 text-base font-bold text-blue-300">
+          <span class="px-3.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20">Website Redesign</span>
+          <span class="px-3.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20">UI / UX</span>
+          <span class="px-3.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20">Interaction</span>
+          <span class="px-3.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20">Development</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── 02 — THE OLD EXPERIENCE (MODULE 02) ───────────────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-red-400">02 — THE OLD EXPERIENCE</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Audit of the Legacy Website</h2>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Analyzing the structural, visual, and operational limitations of the previous corporate website.
+        </p>
+      </div>
+
+      <div class="relative w-full rounded-3xl overflow-hidden glass-card p-4 border border-red-500/30 shadow-2xl">
+        <img src="./old_codemoly_full.png" alt="Legacy CodeMoly Website Full Screenshot" class="w-full h-auto rounded-2xl block opacity-90" />
+      </div>
+
+      <div class="p-8 rounded-3xl glass-card border-l-4 border-l-red-500 border-r border-t border-b border-white/10 shadow-2xl bg-gradient-to-r from-red-950/30 to-slate-950/60">
+        <p class="text-2xl font-extrabold text-red-200 leading-relaxed italic">
+          "The old experience communicated what CodeMoly does — but not what CodeMoly could become."
+        </p>
+      </div>
+    </section>
+
+    <!-- ── 03 — THE TRANSFORMATION (MODULE 03) ───────────────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-blue-400">03 — THE TRANSFORMATION</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Strategic Shift Matrix</h2>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          How CodeMoly 3.0 redefines corporate positioning into an immersive tech showcase.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-8">
+        <div class="glass-card p-8 rounded-3xl border border-red-500/20 flex flex-col gap-4 bg-red-950/10">
+          <span class="text-xl font-bold text-red-400 uppercase tracking-wider">BEFORE (CodeMoly 2.0)</span>
+          <ul class="text-lg text-slate-300 flex flex-col gap-3">
+            <li class="flex items-center gap-3"><span class="text-red-400">✕</span> Static text-heavy presentation</li>
+            <li class="flex items-center gap-3"><span class="text-red-400">✕</span> Flat visual hierarchy</li>
+            <li class="flex items-center gap-3"><span class="text-red-400">✕</span> Manual content maintenance</li>
+          </ul>
+        </div>
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/40 flex flex-col gap-4 bg-blue-950/20">
+          <span class="text-xl font-bold text-blue-400 uppercase tracking-wider">AFTER (CodeMoly 3.0)</span>
+          <ul class="text-lg text-slate-100 flex flex-col gap-3">
+            <li class="flex items-center gap-3"><span class="text-blue-400 font-bold">✓</span> WebGL 3D interactive node dynamics</li>
+            <li class="flex items-center gap-3"><span class="text-blue-400 font-bold">✓</span> Skeuomorphic luxury dark blue design</li>
+            <li class="flex items-center gap-3"><span class="text-blue-400 font-bold">✓</span> 100% Dynamic Payload CMS 3.0 integration</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 04 — DESIGN VISION (MODULE 04) ────────────────────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-blue-400">04 — DESIGN VISION</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Art Direction & Core Philosophy</h2>
+      </div>
+
+      <div class="grid grid-cols-5 gap-6">
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/30 flex flex-col gap-4">
+          <span class="text-3xl font-black text-blue-400">01</span>
+          <h3 class="text-2xl font-extrabold text-white">Cinematic</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Volumetric lighting and luxury dark gradients.</p>
+        </div>
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/30 flex flex-col gap-4">
+          <span class="text-3xl font-black text-blue-400">02</span>
+          <h3 class="text-2xl font-extrabold text-white">Intelligent</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">AI-driven modular architecture for scale.</p>
+        </div>
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/30 flex flex-col gap-4">
+          <span class="text-3xl font-black text-blue-400">03</span>
+          <h3 class="text-2xl font-extrabold text-white">Dynamic</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Interactive WebGL physics and smooth transitions.</p>
+        </div>
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/30 flex flex-col gap-4">
+          <span class="text-3xl font-black text-blue-400">04</span>
+          <h3 class="text-2xl font-extrabold text-white">Human</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Touch ergonomics and 18px minimum text scale.</p>
+        </div>
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/30 flex flex-col gap-4">
+          <span class="text-3xl font-black text-blue-400">05</span>
+          <h3 class="text-2xl font-extrabold text-white">Future-Ready</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Payload CMS 3.0 headless data engine.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 07 — INTERACTION LANGUAGE ⭐ (MODULE 07) ──────────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-blue-400">07 — INTERACTION LANGUAGE</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Designed to Move: Motion as Communication</h2>
+      </div>
+
+      <div class="grid grid-cols-2 gap-8">
+        <div class="glass-card p-10 rounded-3xl border border-blue-500/30 flex flex-col gap-6">
+          <span class="text-3xl font-black text-blue-400">01</span>
+          <h3 class="text-2xl font-black text-white">Vertical Card Overlap</h3>
+          <p class="text-xl text-slate-300">Cards overlap with elevation as users scroll, simulating tactile physical depth.</p>
+        </div>
+        <div class="glass-card p-10 rounded-3xl border border-blue-500/30 flex flex-col gap-6">
+          <span class="text-3xl font-black text-blue-400">02</span>
+          <h3 class="text-2xl font-black text-white">WebGL Node Network</h3>
+          <p class="text-xl text-slate-300">Floating vector nodes move dynamically based on scroll velocity.</p>
+        </div>
+        <div class="glass-card p-10 rounded-3xl border border-blue-500/30 flex flex-col gap-6">
+          <span class="text-3xl font-black text-blue-400">03</span>
+          <h3 class="text-2xl font-black text-white">Scroll Reveal Animation</h3>
+          <p class="text-xl text-slate-300">Elements reveal smoothly when entering threshold (0.12 threshold, -80px margin).</p>
+        </div>
+        <div class="glass-card p-10 rounded-3xl border border-blue-500/30 flex flex-col gap-6">
+          <span class="text-3xl font-black text-blue-400">04</span>
+          <h3 class="text-2xl font-black text-white">Micro-Interactions</h3>
+          <p class="text-xl text-slate-300">Glass cards light up on hover with spring button feedback.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 08 — PRODUCT EXPERIENCE (MODULE 08) ───────────────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-blue-400">08 — PRODUCT EXPERIENCE</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Flagship Enterprise Solutions</h2>
+      </div>
+
+      <div class="flex flex-col gap-8">
+        <div class="glass-card p-10 rounded-3xl border border-blue-500/30 flex flex-col gap-6">
+          <h3 class="text-3xl font-black text-white">AI Training & Model Deployment Platform</h3>
+          <p class="text-xl text-slate-300">High-performance telemetry canvas with real-time GPU cluster allocation.</p>
+        </div>
+        <div class="glass-card p-10 rounded-3xl border border-blue-500/30 flex flex-col gap-6">
+          <h3 class="text-3xl font-black text-white">RMG Enterprise ERP & Production Engine</h3>
+          <p class="text-xl text-slate-300">Unified factory command center tracking floor lines and inventory heatmaps.</p>
+        </div>
+        <div class="glass-card p-10 rounded-3xl border border-blue-500/30 flex flex-col gap-6">
+          <h3 class="text-3xl font-black text-white">Smart Logistics & Fleet Optimization</h3>
+          <p class="text-xl text-slate-300">Interactive 3D globe map with real-time GPS fleet tracking and AI routing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 11 — FROM FIGMA TO PRODUCTION ⭐ (MODULE 11) ────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-blue-400">11 — DEVELOPMENT PROCESS</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">From Figma to Production Code</h2>
+      </div>
+
+      <div class="p-10 rounded-3xl glass-card border border-blue-500/30 flex flex-col gap-6 bg-slate-950/90">
+        <div class="grid grid-cols-6 gap-4 text-center">
+          <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-500/20"><span class="block text-xl font-bold text-white">01 Strategy</span></div>
+          <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-500/20"><span class="block text-xl font-bold text-white">02 UX Flow</span></div>
+          <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-500/20"><span class="block text-xl font-bold text-white">03 UI Design</span></div>
+          <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-500/20"><span class="block text-xl font-bold text-white">04 WebGL</span></div>
+          <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-500/20"><span class="block text-xl font-bold text-white">05 Next.js 16</span></div>
+          <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-500/20"><span class="block text-xl font-bold text-white">06 Production</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 13 — CLOSING (MODULE 13) ──────────────────────────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full pb-8">
+      <div class="relative w-full rounded-3xl p-16 glass-card border border-blue-400/40 text-center flex flex-col items-center justify-center gap-8 bg-gradient-to-b from-blue-950/60 via-slate-950/80 to-black">
+        <h2 class="text-6xl font-black text-white pro-cinematic-headline tracking-tight max-w-5xl">
+          More than a redesign. A new digital experience for CodeMoly.
+        </h2>
+        <div class="p-8 rounded-2xl glass-card border border-blue-400/40 flex flex-col items-center gap-2 bg-black/60">
+          <span class="text-sm uppercase tracking-widest text-slate-400 font-bold">PROJECT CREATOR & LEAD ENGINEER</span>
+          <span class="text-4xl font-black text-white">Designed & Developed by Rasidul Islam</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Footer -->
+    <footer class="relative z-10 w-full pt-12 border-t border-white/10 flex items-center justify-between text-slate-400 text-lg">
+      <span>CodeMoly 3.0 Behance Master Case Study — All 13 Modules Complete</span>
+      <span class="font-extrabold text-white">Designed & Developed by Rasidul Islam</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>

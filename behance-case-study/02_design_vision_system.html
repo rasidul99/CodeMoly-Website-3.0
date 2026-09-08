@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeMoly 3.0 — Behance Master Case Study | Part 2: Design Vision, Visual System & Hero Experience</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    /* Ultra-Smooth Executive Metallic 3D Headline */
+    .pro-cinematic-headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 30%, #E2E8F0 68%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.75));
+    }
+
+    .pro-headline-glow {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 750px;
+      height: 240px;
+      background: radial-gradient(ellipse at 50% 50%, rgba(56, 189, 248, 0.16) 0%, rgba(37, 99, 235, 0.08) 50%, transparent 75%);
+      filter: blur(65px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glass-card {
+      background: rgba(8, 12, 24, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    
+    /* Deep Luxury Black Gradient Background */
+    .hero-bg {
+      background: 
+        radial-gradient(circle at 50% 0%, rgba(20, 30, 60, 0.8) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(25, 15, 45, 0.6) 0%, transparent 50%),
+        linear-gradient(180deg, #000000 0%, #03050c 35%, #080c19 70%, #000000 100%);
+    }
+
+    /* Tech Grid Pattern with 4% Line Opacity & Random Multi-Point Masking */
+    .random-grid-mask {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 3.5rem 3.5rem;
+      mask-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 75% 15%, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 30% 90%, rgba(0, 0, 0, 0.5) 0%, transparent 35%);
+      mask-composite: add;
+      -webkit-mask-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 75% 15%, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 30% 90%, rgba(0, 0, 0, 0.5) 0%, transparent 35%);
+      -webkit-mask-composite: source-over;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen text-slate-100 antialiased selection:bg-blue-500 selection:text-white py-10 flex justify-center">
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       BEHANCE 1400PX MASTER CANVAS (SOLID WHITE OUTSIDE & LUXURY BLACK GRADIENT INSIDE)
+  ════════════════════════════════════════════════════════════════════════ -->
+  <div class="w-[1400px] max-w-[1400px] hero-bg min-h-screen p-12 lg:p-16 flex flex-col gap-24 lg:gap-32 shadow-[0_25px_80px_rgba(0,0,0,0.35)] rounded-3xl border border-slate-200 overflow-hidden shrink-0 relative">
+
+    <!-- Tech Grid Pattern Layer with 4% Opacity & Organic Random Multi-Point Masking -->
+    <div class="absolute inset-0 random-grid-mask pointer-events-none z-0"></div>
+
+    <!-- Top Background Graphic Artwork Layer (100% Opacity) -->
+    <div class="absolute top-0 left-0 right-0 w-full pointer-events-none z-0 opacity-100 mix-blend-screen">
+      <img src="./top_d.png" alt="Top Background Artwork" class="w-full h-auto block opacity-100" />
+    </div>
+
+    <!-- Full-Width Blue Horizon Glow Artwork -->
+    <div class="absolute top-[140px] left-0 right-0 w-full pointer-events-none z-0">
+      <img src="./hero_glow_bg.png" alt="Blue Horizon Glow Artwork" class="w-full h-auto block opacity-100 mix-blend-screen" />
+    </div>
+
+    <!-- ── 04 — DESIGN VISION & PHILOSOPHY (MODULE 04) ─────────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full pt-8">
+      <div class="pro-headline-glow"></div>
+
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-blue-400">04 — DESIGN VISION</span>
+        <h2 class="text-6xl font-black text-white pro-cinematic-headline tracking-tight">Art Direction & Core Philosophy</h2>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Establishing 5 design principles to guide the visual tone, tactile feedback, and structural balance.
+        </p>
+      </div>
+
+      <!-- 5 Editorial Philosophy Pillars -->
+      <div class="grid grid-cols-5 gap-6">
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/30 flex flex-col gap-4">
+          <span class="text-3xl font-black text-blue-400">01</span>
+          <h3 class="text-2xl font-extrabold text-white">Cinematic</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Volumetric lighting, luxury dark gradients, and dramatic focal points.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/30 flex flex-col gap-4">
+          <span class="text-3xl font-black text-blue-400">02</span>
+          <h3 class="text-2xl font-extrabold text-white">Intelligent</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">AI-driven modular architecture tailored for enterprise scale.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/30 flex flex-col gap-4">
+          <span class="text-3xl font-black text-blue-400">03</span>
+          <h3 class="text-2xl font-extrabold text-white">Dynamic</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Interactive WebGL physics, particle rays, and smooth scroll transitions.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/30 flex flex-col gap-4">
+          <span class="text-3xl font-black text-blue-400">04</span>
+          <h3 class="text-2xl font-extrabold text-white">Human</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Tactile touch ergonomics, 4-tab switcher bar, and minimum 18px text readability.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-3xl border border-blue-500/30 flex flex-col gap-4">
+          <span class="text-3xl font-black text-blue-400">05</span>
+          <h3 class="text-2xl font-extrabold text-white">Future-Ready</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Payload CMS 3.0 headless data layer with sub-millisecond edge CDN.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── 05 — EDITORIAL VISUAL SYSTEM (MODULE 05) ────────────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-blue-400">05 — VISUAL SYSTEM</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Editorial Design Foundations</h2>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Crafting a cohesive visual language through skeuomorphic dark blue gradients, metallic typography, and glass tokens.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-10">
+        
+        <!-- TYPOGRAPHY BOARD -->
+        <div class="glass-card p-10 rounded-[36px] flex flex-col justify-between gap-6 border border-blue-500/30">
+          <span class="text-sm font-extrabold uppercase tracking-widest text-blue-400">TYPOGRAPHY SCALE</span>
+          
+          <div class="flex flex-col gap-4">
+            <div>
+              <span class="text-xs font-mono text-slate-400">SORA DISPLAY (BOLD / 800)</span>
+              <h3 class="text-5xl font-black text-white tracking-tight">CodeMoly 3.0</h3>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-slate-400">PLUS JAKARTA SANS (MEDIUM & BOLD / 18PX+)</span>
+              <p class="text-xl text-slate-300 leading-relaxed">Enterprise AI Software Engineering & Global Digital Transformation.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 pt-2 text-base font-bold text-blue-300">
+            <span class="px-4 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20">Minimum 18px Rule</span>
+            <span class="px-4 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20">Executive Specular Shadows</span>
+          </div>
+        </div>
+
+        <!-- COLOR & GRADIENT TOKENS BOARD -->
+        <div class="glass-card p-10 rounded-[36px] flex flex-col justify-between gap-6 border border-blue-500/30">
+          <span class="text-sm font-extrabold uppercase tracking-widest text-blue-400">COLOR & SKEUOMORPHIC TOKENS</span>
+          
+          <div class="grid grid-cols-4 gap-4">
+            <div class="p-4 rounded-2xl bg-[#09164f] border border-white/20 flex flex-col gap-2">
+              <div class="w-full h-12 rounded-xl bg-[#09164f] shadow-md"></div>
+              <span class="text-xs font-mono font-bold text-white">#09164f</span>
+              <span class="text-xs text-slate-400">Royal Dark Ink</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#101f63] border border-white/20 flex flex-col gap-2">
+              <div class="w-full h-12 rounded-xl bg-[#101f63] shadow-md"></div>
+              <span class="text-xs font-mono font-bold text-white">#101f63</span>
+              <span class="text-xs text-slate-400">Panel Deep</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#00C8FF] border border-white/20 flex flex-col gap-2">
+              <div class="w-full h-12 rounded-xl bg-[#00C8FF] shadow-md"></div>
+              <span class="text-xs font-mono font-bold text-slate-900">#00C8FF</span>
+              <span class="text-xs text-slate-400">Electric Cyan</span>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#FFFFFF] border border-white/20 flex flex-col gap-2">
+              <div class="w-full h-12 rounded-xl bg-[#FFFFFF] shadow-md"></div>
+              <span class="text-xs font-mono font-bold text-slate-900">#FFFFFF</span>
+              <span class="text-xs text-slate-400">Pure White</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 pt-2 text-base font-bold text-blue-300">
+            <span class="px-4 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20">Prem UI/UX 3-Layer Blur</span>
+            <span class="px-4 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20">Skeuomorphic Corner Glow</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── 06 — HERO EXPERIENCE & ANNOTATIONS (MODULE 06) ───────────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-blue-400">06 — HERO EXPERIENCE</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">The First Impression</h2>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Crafting an immediate sense of enterprise authority with high-contrast typography and volumetric stage lighting.
+        </p>
+      </div>
+
+      <!-- 3 Callout Annotations over Hero Frame -->
+      <div class="grid grid-cols-3 gap-8">
+        <div class="glass-card p-8 rounded-3xl border border-blue-400/30 flex flex-col gap-3">
+          <span class="text-base font-extrabold uppercase tracking-widest text-blue-400">01 — CINEMATIC BACKGROUND</span>
+          <h4 class="text-2xl font-extrabold text-white">Volumetric Glow Artwork</h4>
+          <p class="text-lg text-slate-300 leading-relaxed">High-definition horizon arc glow layer uncropped across full canvas width.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-3xl border border-blue-400/30 flex flex-col gap-3">
+          <span class="text-base font-extrabold uppercase tracking-widest text-blue-400">02 — DYNAMIC TYPOGRAPHY</span>
+          <h4 class="text-2xl font-extrabold text-white">Platinum Metallic Display</h4>
+          <p class="text-lg text-slate-300 leading-relaxed">Smooth 3D specular gradient with high-dispersion ambient drop shadow.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-3xl border border-blue-400/30 flex flex-col gap-3">
+          <span class="text-base font-extrabold uppercase tracking-widest text-blue-400">03 — CONVERSION CTA</span>
+          <h4 class="text-2xl font-extrabold text-white">Tactile CTA Buttons</h4>
+          <p class="text-lg text-slate-300 leading-relaxed">High-contrast skeuomorphic action triggers for enterprise lead capture.</p>
+        </div>
+      </div>
+
+      <!-- Hero Frame Container -->
+      <div class="w-full rounded-[36px] bg-slate-900 border border-blue-500/40 p-4 shadow-[0_30px_70px_rgba(9,22,79,0.9)] glow-purple relative overflow-hidden group">
+        <img src="./home.jpg" alt="Hero Experience Showcase" class="w-full h-auto object-cover rounded-2xl shadow-2xl" />
+      </div>
+
+    </section>
+
+    <!-- ── FOOTER CREDIT (MINIMUM 18PX) ────────────────────────────────────── -->
+    <footer class="relative z-10 text-center text-lg text-slate-400 py-8 border-t border-white/10">
+      Designed & Developed by Rasidul Islam | CodeMoly 3.0 Behance Master Case Study — Part 2 (Design Vision & System)
+    </footer>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeMoly 3.0 — Behance Master Case Study | Part 1: Cover, Old Experience & Transformation</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    /* Ultra-Smooth Executive Metallic 3D Headline */
+    .pro-cinematic-headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 30%, #E2E8F0 68%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.75));
+    }
+
+    /* Executive Subtitle */
+    .pro-cinematic-subtitle {
+      color: #CBD5E1;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.45;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Ambient Illumination Spotlight */
+    .pro-headline-glow {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 750px;
+      height: 240px;
+      background: radial-gradient(ellipse at 50% 50%, rgba(56, 189, 248, 0.16) 0%, rgba(37, 99, 235, 0.08) 50%, transparent 75%);
+      filter: blur(65px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glass-card {
+      background: rgba(8, 12, 24, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    
+    /* Deep Luxury Black Gradient Background */
+    .hero-bg {
+      background: 
+        radial-gradient(circle at 50% 0%, rgba(20, 30, 60, 0.8) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(25, 15, 45, 0.6) 0%, transparent 50%),
+        linear-gradient(180deg, #000000 0%, #03050c 35%, #080c19 70%, #000000 100%);
+    }
+
+    /* Tech Grid Pattern with 4% Line Opacity & Random Multi-Point Masking */
+    .random-grid-mask {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 3.5rem 3.5rem;
+      mask-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 75% 15%, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 30% 90%, rgba(0, 0, 0, 0.5) 0%, transparent 35%);
+      mask-composite: add;
+      -webkit-mask-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 45%),
+        radial-gradient(circle at 75% 15%, rgba(0, 0, 0, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, rgba(0, 0, 0, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(0, 0, 0, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 30% 90%, rgba(0, 0, 0, 0.5) 0%, transparent 35%);
+      -webkit-mask-composite: source-over;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen text-slate-100 antialiased selection:bg-blue-500 selection:text-white py-10 flex justify-center">
+
+  <!-- ════════════════════════════════════════════════════════════════════════
+       BEHANCE 1400PX MASTER CANVAS (SOLID WHITE OUTSIDE & LUXURY BLACK GRADIENT INSIDE)
+  ════════════════════════════════════════════════════════════════════════ -->
+  <div class="w-[1400px] max-w-[1400px] hero-bg min-h-screen p-12 lg:p-16 flex flex-col gap-24 lg:gap-32 shadow-[0_25px_80px_rgba(0,0,0,0.35)] rounded-3xl border border-slate-200 overflow-hidden shrink-0 relative">
+
+    <!-- Tech Grid Pattern Layer with 4% Opacity & Organic Random Multi-Point Masking -->
+    <div class="absolute inset-0 random-grid-mask pointer-events-none z-0"></div>
+
+    <!-- Top Background Graphic Artwork Layer (100% Opacity) -->
+    <div class="absolute top-0 left-0 right-0 w-full pointer-events-none z-0 opacity-100 mix-blend-screen">
+      <img src="./top_d.png" alt="Top Background Artwork" class="w-full h-auto block opacity-100" />
+    </div>
+
+    <!-- Full-Width Blue Horizon Glow Artwork -->
+    <div class="absolute top-[140px] left-0 right-0 w-full pointer-events-none z-0">
+      <img src="./hero_glow_bg.png" alt="Blue Horizon Glow Artwork" class="w-full h-auto block opacity-100 mix-blend-screen" />
+    </div>
+
+    <!-- ── 01 — COVER (MODULE 01) ─────────────────────────────────────────── -->
+    <header class="relative z-10 w-full text-center flex flex-col items-center justify-center pt-8 pb-4">
+      
+      <!-- Volumetric Ambient Illumination -->
+      <div class="pro-headline-glow"></div>
+
+      <!-- Category & Project Title Tag -->
+      <div class="flex items-center gap-4 mb-6">
+        <span class="px-5 py-2 rounded-full text-base font-extrabold uppercase tracking-[0.2em] bg-blue-500/20 text-blue-300 border border-blue-400/30 backdrop-blur-md">
+          WEBSITE REDESIGN & FULL-STACK DEVELOPMENT
+        </span>
+      </div>
+
+      <!-- Main Cinematic Display Title -->
+      <h1 class="relative z-10 font-black text-[108px] tracking-tight leading-[1.05] pb-6 pt-2 pro-cinematic-headline mb-6 max-w-6xl inline-block">
+        CodeMoly 3.0
+      </h1>
+
+      <!-- Main Tagline -->
+      <p class="relative z-10 font-extrabold text-3xl pro-cinematic-subtitle tracking-wide max-w-5xl mb-6 leading-relaxed">
+        Transforming Businesses Through Vision & AI Innovation.
+      </p>
+
+      <p class="relative z-10 text-xl font-medium text-slate-300 max-w-4xl leading-relaxed mb-10">
+        From a conventional corporate site to an interactive digital experience — fusing WebGL 3D physics, dark skeuomorphic UI, and Payload CMS 3.0 scalability.
+      </p>
+
+      <!-- Prominent Author & Positioning Credit -->
+      <div class="relative z-10 glass-card px-8 py-4 rounded-2xl border border-blue-400/30 flex items-center gap-6 shadow-xl mb-12">
+        <div class="flex flex-col text-left">
+          <span class="text-sm uppercase tracking-widest text-slate-400 font-bold">PROJECT CREATOR & LEAD</span>
+          <span class="text-2xl font-black text-white">Designed & Developed by Rasidul Islam</span>
+        </div>
+        <div class="h-10 w-px bg-white/20"></div>
+        <div class="flex gap-3 text-base font-bold text-blue-300">
+          <span class="px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20">Website Redesign</span>
+          <span class="px-3.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20">UI / UX</span>
+          <span class="px-3.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20">Interaction</span>
+          <span class="px-3.5 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20">Development</span>
+        </div>
+      </div>
+
+      <!-- Hero Production Showcase Mockup -->
+      <div class="relative z-10 w-full rounded-3xl overflow-hidden p-3 bg-white/5 backdrop-blur-xl border border-white/20 shadow-[0_25px_60px_rgba(9,22,79,0.8)] group hover:border-blue-400/60 transition-all duration-500">
+        <img src="./home.jpg" alt="CodeMoly 3.0 Hero Production Showcase" class="w-full h-auto object-cover rounded-2xl border border-white/10 shadow-xl" />
+      </div>
+
+    </header>
+
+    <!-- ── 02 — THE OLD EXPERIENCE (MODULE 02 WITH 4 RED CALLOUT ANNOTATIONS) ── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      
+      <div class="flex flex-col gap-4 text-left">
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-red-400">02 — THE OLD EXPERIENCE</span>
+          <span class="px-5 py-2 rounded-full text-base font-bold uppercase tracking-wider bg-red-500/20 text-red-400 border border-red-500/30 font-mono">
+            Legacy Website Audit (codemoly.com)
+          </span>
+        </div>
+        
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">
+          Deconstructing the Legacy Site Friction
+        </h2>
+        
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Before redesigning, we audited the existing platform to pinpoint structural friction, visual stagnation, and conversion bottlenecks.
+        </p>
+      </div>
+
+      <!-- 4 Red Callout Key Point Badges -->
+      <div class="grid grid-cols-4 gap-6">
+        <div class="glass-card p-6 rounded-2xl border-red-500/30 flex flex-col gap-2">
+          <span class="text-xl font-black text-red-400">01 — Repetitive Layout</span>
+          <p class="text-lg text-slate-300">Monotonous container grids creating visual fatigue.</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border-red-500/30 flex flex-col gap-2">
+          <span class="text-xl font-black text-red-400">02 — Weak Hierarchy</span>
+          <p class="text-lg text-slate-300">Lack of bold visual focus for key enterprise services.</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border-red-500/30 flex flex-col gap-2">
+          <span class="text-xl font-black text-red-400">03 — Limited Interaction</span>
+          <p class="text-lg text-slate-300">Static text cards with zero tactile feedback or motion.</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl border-red-500/30 flex flex-col gap-2">
+          <span class="text-xl font-black text-red-400">04 — Low Differentiation</span>
+          <p class="text-lg text-slate-300">Standard agency visual language lacking AI authority.</p>
+        </div>
+      </div>
+
+      <!-- Full-Page Old Screenshot Container with 4 Red Callout Annotations -->
+      <div class="w-full h-[1600px] rounded-[36px] bg-slate-950 border border-red-500/40 p-4 shadow-[0_25px_60px_rgba(0,0,0,0.85)] relative overflow-hidden group">
+        
+        <!-- Annotated Callout 1 (Top Left) -->
+        <div class="absolute left-10 top-20 z-20 glass-card p-5 rounded-2xl border border-red-500/60 bg-red-950/80 max-w-sm shadow-2xl">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="w-3 h-3 rounded-full bg-red-500 animate-ping"></span>
+            <span class="text-base font-extrabold text-red-300 uppercase tracking-wider">01 — REPETITIVE LAYOUT</span>
+          </div>
+          <p class="text-base text-slate-200 leading-snug">Flat structural blocks offering minimal visual contrast.</p>
+        </div>
+
+        <!-- Annotated Callout 2 (Top Right) -->
+        <div class="absolute right-10 top-72 z-20 glass-card p-5 rounded-2xl border border-red-500/60 bg-red-950/80 max-w-sm shadow-2xl">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="w-3 h-3 rounded-full bg-red-500 animate-ping"></span>
+            <span class="text-base font-extrabold text-red-300 uppercase tracking-wider">02 — WEAK HIERARCHY</span>
+            </div>
+          <p class="text-base text-slate-200 leading-snug">Core enterprise offerings buried under uniform typography.</p>
+        </div>
+
+        <!-- Annotated Callout 3 (Mid Left) -->
+        <div class="absolute left-10 top-[750px] z-20 glass-card p-5 rounded-2xl border border-red-500/60 bg-red-950/80 max-w-sm shadow-2xl">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="w-3 h-3 rounded-full bg-red-500 animate-ping"></span>
+            <span class="text-base font-extrabold text-red-300 uppercase tracking-wider">03 — LIMITED INTERACTION</span>
+          </div>
+          <p class="text-base text-slate-200 leading-snug">Static listings without 3D stages or motion feedback.</p>
+        </div>
+
+        <!-- Annotated Callout 4 (Bottom Right) -->
+        <div class="absolute right-10 top-[1200px] z-20 glass-card p-5 rounded-2xl border border-red-500/60 bg-red-950/80 max-w-sm shadow-2xl">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="w-3 h-3 rounded-full bg-red-500 animate-ping"></span>
+            <span class="text-base font-extrabold text-red-300 uppercase tracking-wider">04 — LOW DIFFERENTIATION</span>
+          </div>
+          <p class="text-base text-slate-200 leading-snug">Generic layout missing skeuomorphic dark blue identity.</p>
+        </div>
+
+        <!-- The Actual Old Screenshot -->
+        <img src="./old_codemoly_full.png" alt="Legacy Old Website Full Screenshot" class="w-full h-full object-cover object-top rounded-2xl opacity-90 group-hover:opacity-100 transition-opacity" />
+      </div>
+
+      <!-- Power Statement Banner (Axencis Reference Match) -->
+      <div class="w-full glass-card p-12 rounded-3xl border border-red-500/40 text-center flex flex-col items-center justify-center gap-4 bg-gradient-to-r from-slate-950 via-red-950/40 to-slate-950">
+        <span class="text-lg font-mono uppercase tracking-[0.3em] text-red-400 font-bold">KEY AUDIT FINDING</span>
+        <blockquote class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-relaxed max-w-5xl">
+          “The old experience communicated what CodeMoly does — but not what CodeMoly could become.”
+        </blockquote>
+      </div>
+
+    </section>
+
+    <!-- ── 03 — THE TRANSFORMATION (MODULE 03 BEFORE vs AFTER) ──────────────── -->
+    <section class="relative z-10 flex flex-col gap-12 w-full">
+      
+      <div class="flex flex-col gap-4 text-left">
+        <span class="text-lg font-extrabold uppercase tracking-[0.25em] text-blue-400">03 — THE TRANSFORMATION</span>
+        <h2 class="text-5xl font-black text-white pro-cinematic-headline tracking-tight">Shift in Digital Experience</h2>
+        <p class="text-xl text-slate-300 max-w-4xl leading-relaxed">
+          Translating complex enterprise positioning into an intuitive, interactive, and future-ready digital ecosystem.
+        </p>
+      </div>
+
+      <!-- 3 Transformation Metric Pillars -->
+      <div class="grid grid-cols-3 gap-8">
+        
+        <div class="glass-card p-10 rounded-3xl flex flex-col justify-between gap-6 border border-blue-500/30">
+          <div class="flex items-center justify-between border-b border-white/10 pb-4">
+            <span class="text-lg font-mono text-slate-400 font-bold">BEFORE</span>
+            <span class="text-2xl font-black text-blue-400">➔</span>
+            <span class="text-lg font-mono text-blue-400 font-bold">AFTER</span>
+          </div>
+          <h3 class="text-3xl font-black text-white">Static ➔ Dynamic</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Transitioning from motionless text lists to interactive WebGL 3D physics and animated particle stages.</p>
+        </div>
+
+        <div class="glass-card p-10 rounded-3xl flex flex-col justify-between gap-6 border border-blue-500/30">
+          <div class="flex items-center justify-between border-b border-white/10 pb-4">
+            <span class="text-lg font-mono text-slate-400 font-bold">BEFORE</span>
+            <span class="text-2xl font-black text-blue-400">➔</span>
+            <span class="text-lg font-mono text-blue-400 font-bold">AFTER</span>
+          </div>
+          <h3 class="text-3xl font-black text-white">Informational ➔ Experiential</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Replacing passive reading with tactile skeuomorphic cards, 4-Tab instant switcher, and touch ergonomics.</p>
+        </div>
+
+        <div class="glass-card p-10 rounded-3xl flex flex-col justify-between gap-6 border border-blue-500/30">
+          <div class="flex items-center justify-between border-b border-white/10 pb-4">
+            <span class="text-lg font-mono text-slate-400 font-bold">BEFORE</span>
+            <span class="text-2xl font-black text-blue-400">➔</span>
+            <span class="text-lg font-mono text-blue-400 font-bold">AFTER</span>
+          </div>
+          <h3 class="text-3xl font-black text-white">Conventional ➔ Intelligent</h3>
+          <p class="text-lg text-slate-300 leading-relaxed">Elevating standard web pages into AI-driven enterprise product suites backed by Payload CMS 3.0.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── FOOTER CREDIT (MINIMUM 18PX) ────────────────────────────────────── -->
+    <footer class="relative z-10 text-center text-lg text-slate-400 py-8 border-t border-white/10">
+      Designed & Developed by Rasidul Islam | CodeMoly 3.0 Behance Case Study — Part 1 (Cover, Old Experience & Transformation)
+    </footer>
+
+  </div>
+
+</body>
+</html>
