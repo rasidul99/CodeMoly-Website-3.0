@@ -356,9 +356,19 @@
       </div>
 
       <!-- In-Depth Diagnostic Analysis (Below Image - No Box Outline) -->
-      <div class="w-full flex flex-col gap-8 p-10 lg:p-12 rounded-[36px] bg-slate-950/80 shadow-2xl border-none">
+      <div class="w-full flex flex-col gap-8 p-10 lg:p-12 rounded-[36px] bg-slate-950/80 shadow-2xl border-none relative overflow-hidden">
         
-        <div class="flex flex-col gap-4">
+        <!-- Background Graphic Artwork Layer -->
+        <div class="absolute inset-0 pointer-events-none z-0">
+          <img 
+            src="./download - 2026-09-08T160515.779.png" 
+            alt="Strategic Diagnosis Background Artwork" 
+            class="w-full h-full object-cover object-center block opacity-75 mix-blend-screen"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-transparent to-slate-950/80 pointer-events-none"></div>
+        </div>
+
+        <div class="flex flex-col gap-4 relative z-10">
           <span class="text-sm font-black uppercase tracking-[0.25em] text-red-400">DIAGNOSIS & STRATEGIC GAPS</span>
           <h3 class="text-3xl lg:text-4xl font-black text-white leading-tight">
             A Company Growing Faster Than Its Digital Presence
@@ -369,9 +379,9 @@
         </div>
 
         <!-- 4 Deep Analysis Points (Min 18px Text Size - Clean No Outline) -->
-        <div class="grid grid-cols-4 gap-6 pt-2">
+        <div class="grid grid-cols-4 gap-6 pt-2 relative z-10">
           
-          <div class="p-6 rounded-2xl bg-white/[0.04] border-none flex flex-col gap-3">
+          <div class="p-6 rounded-2xl bg-white/[0.04] backdrop-blur-sm border-none flex flex-col gap-3">
             <div class="flex items-center gap-3">
               <span class="px-3 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-lg">01</span>
               <h4 class="text-xl font-bold text-white">Brand Gap</h4>
@@ -381,7 +391,7 @@
             </p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-white/[0.04] border-none flex flex-col gap-3">
+          <div class="p-6 rounded-2xl bg-white/[0.04] backdrop-blur-sm border-none flex flex-col gap-3">
             <div class="flex items-center gap-3">
               <span class="px-3 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-lg">02</span>
               <h4 class="text-xl font-bold text-white">Passive UX</h4>
@@ -391,7 +401,7 @@
             </p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-white/[0.04] border-none flex flex-col gap-3">
+          <div class="p-6 rounded-2xl bg-white/[0.04] backdrop-blur-sm border-none flex flex-col gap-3">
             <div class="flex items-center gap-3">
               <span class="px-3 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-lg">03</span>
               <h4 class="text-xl font-bold text-white">Card Fatigue</h4>
@@ -401,7 +411,7 @@
             </p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-white/[0.04] border-none flex flex-col gap-3">
+          <div class="p-6 rounded-2xl bg-white/[0.04] backdrop-blur-sm border-none flex flex-col gap-3">
             <div class="flex items-center gap-3">
               <span class="px-3 py-1 rounded-lg bg-red-500/20 text-red-400 font-black text-lg">04</span>
               <h4 class="text-xl font-bold text-white">Touch Friction</h4>
@@ -414,7 +424,7 @@
         </div>
 
         <!-- Senior Strategic Finding Quote -->
-        <div class="p-6 rounded-2xl bg-gradient-to-r from-red-950/40 via-blue-950/30 to-slate-950/60 border-l-4 border-l-red-500 border-none">
+        <div class="p-6 rounded-2xl bg-gradient-to-r from-red-950/40 via-blue-950/30 to-slate-950/60 border-l-4 border-l-red-500 border-none relative z-10 backdrop-blur-sm">
           <p class="text-xl font-bold text-slate-200 italic leading-relaxed">
             "The challenge wasn't just modernizing UI components — it was closing the gap between CodeMoly's true technical capabilities and its global brand perception."
           </p>
@@ -425,20 +435,7 @@
     </section>
 
     <!-- ── SECTION 4: KEY IMPACT METRICS (DESKTOP FULL SCALE) ───────────────── -->
-    <section class="relative z-10 w-full py-16 px-4 lg:px-8 rounded-[40px] overflow-hidden">
-      
-      <!-- Section Background Graphic Artwork Layer -->
-      <div class="absolute inset-0 pointer-events-none z-0">
-        <img 
-          src="./download - 2026-09-08T160515.779.png" 
-          alt="Impact Metrics Background Artwork" 
-          class="w-full h-full object-cover object-center block opacity-90 mix-blend-screen"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-[#030014]/60 via-transparent to-[#030014]/80 pointer-events-none"></div>
-      </div>
-
-      <!-- 3 Metrics Grid -->
-      <div class="relative z-10 grid grid-cols-3 gap-8">
+    <section class="relative z-10 grid grid-cols-3 gap-8">
       
       <!-- Metric Card 1: Conversion Growth -->
       <div class="relative w-full h-[260px] group transition-all duration-500 hover:scale-[1.03]">
@@ -561,8 +558,6 @@
           <!-- Top inner shadow -->
           <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent pointer-events-none z-10"></div>
         </div>
-      </div>
-
       </div>
 
     </section>
